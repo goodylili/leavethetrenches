@@ -456,7 +456,7 @@ export default function Home() {
           <section className="container max-w-7xl mx-auto px-4 pb-12">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-2xl font-bold flex items-center gap-2">
-                🔥 Trending Opportunities
+                Trending Opportunities
               </h2>
             </div>
             <Carousel
@@ -466,7 +466,7 @@ export default function Home() {
               }}
               plugins={[
                 Autoplay({
-                  delay: 2000,
+                  delay: 4000,
                   stopOnInteraction: true,
                 }),
               ]}

@@ -10,23 +10,23 @@ import { TwitterIcon, LinkedinIcon, InstagramIcon } from "lucide-react";
 export default function Footer() {
     return (
         <section className="bg-black py-4 px-4 md:px-6 mt-auto">
-            <footer className="relative mx-auto max-w-7xl overflow-hidden rounded-2xl bg-zinc-950 text-white py-12 px-6 md:px-12 border border-zinc-900 shadow-2xl">
+            <footer className="relative mx-auto max-w-7xl overflow-hidden rounded-2xl bg-black text-white py-8 px-6 md:px-12 border border-zinc-900 shadow-2xl">
                 {/* Background Text Effect - Marquee */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full select-none pointer-events-none z-0 opacity-[0.02]">
                     <div className="animate-marquee whitespace-nowrap">
-                        <span className="text-[12vw] font-black leading-none text-center text-white tracking-tighter mx-4">
+                        <span className="text-[10vw] font-black leading-none text-center text-white tracking-tighter mx-4">
                             LEAVE THE TRENCHES
                         </span>
-                        <span className="text-[12vw] font-black leading-none text-center text-white tracking-tighter mx-4">
+                        <span className="text-[10vw] font-black leading-none text-center text-white tracking-tighter mx-4">
                             LEAVE THE TRENCHES
                         </span>
                     </div>
                 </div>
 
-                <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8">
+                <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-6">
                     {/* Branding Column */}
-                    <div className="md:col-span-4 space-y-4">
-                        <div className="space-y-4">
+                    <div className="md:col-span-4 space-y-3">
+                        <div className="space-y-3">
                             <Link href="/" className="flex items-center gap-3">
                                 <span className="font-bold text-xl tracking-tight">Leave the Trenches</span>
                             </Link>
@@ -43,10 +43,10 @@ export default function Footer() {
                     </div>
 
                     {/* Desktop Navigation - Grid Layout */}
-                    <div className="hidden md:grid md:col-span-8 grid-cols-3 gap-8">
+                    <div className="hidden md:grid md:col-span-8 grid-cols-3 gap-6">
                         <div>
-                            <h4 className="text-xs font-bold text-zinc-500 uppercase tracking-wider mb-6">Explore</h4>
-                            <ul className="space-y-4">
+                            <h4 className="text-xs font-bold text-zinc-500 uppercase tracking-wider mb-4">Explore</h4>
+                            <ul className="space-y-3">
                                 <li>
                                     <Link href="/" className="group flex items-baseline gap-2">
                                         <span className="font-semibold text-zinc-200 group-hover:text-white">Home</span>
@@ -65,8 +65,8 @@ export default function Footer() {
                             </ul>
                         </div>
                         <div>
-                            <h4 className="text-xs font-bold text-zinc-500 uppercase tracking-wider mb-6">Resources</h4>
-                            <ul className="space-y-4">
+                            <h4 className="text-xs font-bold text-zinc-500 uppercase tracking-wider mb-4">Resources</h4>
+                            <ul className="space-y-3">
                                 <li>
                                     <Link href="/blog" className="group flex items-baseline gap-2">
                                         <span className="font-semibold text-zinc-200 group-hover:text-white">Guides</span>
@@ -85,8 +85,8 @@ export default function Footer() {
                             </ul>
                         </div>
                         <div>
-                            <h4 className="text-xs font-bold text-zinc-500 uppercase tracking-wider mb-6">Legal</h4>
-                            <ul className="space-y-4">
+                            <h4 className="text-xs font-bold text-zinc-500 uppercase tracking-wider mb-4">Legal</h4>
+                            <ul className="space-y-3">
                                 <li>
                                     <Link href="/privacy" className="group block">
                                         <span className="font-semibold text-zinc-200 group-hover:text-white">Privacy</span>
