@@ -37,7 +37,34 @@ const MOCK_OPPORTUNITIES = [
     visa_sponsorship: true,
     deadline: "2026-03-31",
     application_url: "https://studyinkorea.go.kr",
-    description: "Full scholarship for master's and doctoral degrees in Korea. Monthly allowance + Flight.",
+    description: `This is an exceptional opportunity for qualified candidates to join a world-class organization dedicated to making a global impact. You will be working with a diverse team of experts from around the world, tackling some of the most challenging problems in the industry.
+
+Key Responsibilities:
+- Lead and manage complex projects from conception to completion, ensuring all milestones are met on time and within budget.
+- Collaborate with cross-functional teams to design, develop, and deploy innovative solutions that address user needs and business goals.
+- Conduct in-depth research and analysis to identify trends, opportunities, and risks, and provide actionable insights to senior leadership.
+- Mentor and coach junior team members, fostering a culture of continuous learning and professional growth.
+- Represent the organization at international conferences, workshops, and industry events, building strong relationships with key stakeholders.
+
+Qualifications:
+- A master's degree or higher in a relevant field (e.g., Computer Science, Engineering, Business Administration, International Relations).
+- Minimum of 5 years of professional experience in a similar role, with a proven track record of success.
+- Strong leadership and communication skills, with the ability to influence and inspire others.
+- Fluency in English is required; proficiency in other languages is a plus.
+- Willingness to travel internationally as needed.
+
+Benefits:
+- Competitive salary and performance-based bonuses.
+- Comprehensive health, dental, and vision insurance plans.
+- Generous paid time off, including vacation days, holidays, and sick leave.
+- Professional development opportunities, including access to training programs and conferences.
+- Relocation assistance and visa sponsorship for qualified candidates.
+
+About the Organization:
+Our organization is a global leader in its field, committed to driving positive change and creating a better future for all. We value diversity, inclusion, and innovation, and we are dedicated to providing a supportive and inclusive work environment where everyone can thrive. Join us and be part of a team that is making a difference in the world.
+
+Application Process:
+Interested candidates should submit a resume, cover letter, and portfolio (if applicable) through our online application portal. Shortlisted candidates will be contacted for an interview. We look forward to reviewing your application!`,
     hot: true,
     posted_date: "2025-10-15",
     image_url: "https://images.unsplash.com/photo-1517154421773-0529f29ea451?w=800&auto=format&fit=crop&q=60"
@@ -53,7 +80,34 @@ const MOCK_OPPORTUNITIES = [
     visa_sponsorship: true,
     deadline: "2026-11-01",
     application_url: "https://chevening.org",
-    description: "Fully funded master's degree scholarship for future leaders to study in the UK.",
+    description: `This is an exceptional opportunity for qualified candidates to join a world-class organization dedicated to making a global impact. You will be working with a diverse team of experts from around the world, tackling some of the most challenging problems in the industry.
+
+Key Responsibilities:
+- Lead and manage complex projects from conception to completion, ensuring all milestones are met on time and within budget.
+- Collaborate with cross-functional teams to design, develop, and deploy innovative solutions that address user needs and business goals.
+- Conduct in-depth research and analysis to identify trends, opportunities, and risks, and provide actionable insights to senior leadership.
+- Mentor and coach junior team members, fostering a culture of continuous learning and professional growth.
+- Represent the organization at international conferences, workshops, and industry events, building strong relationships with key stakeholders.
+
+Qualifications:
+- A master's degree or higher in a relevant field (e.g., Computer Science, Engineering, Business Administration, International Relations).
+- Minimum of 5 years of professional experience in a similar role, with a proven track record of success.
+- Strong leadership and communication skills, with the ability to influence and inspire others.
+- Fluency in English is required; proficiency in other languages is a plus.
+- Willingness to travel internationally as needed.
+
+Benefits:
+- Competitive salary and performance-based bonuses.
+- Comprehensive health, dental, and vision insurance plans.
+- Generous paid time off, including vacation days, holidays, and sick leave.
+- Professional development opportunities, including access to training programs and conferences.
+- Relocation assistance and visa sponsorship for qualified candidates.
+
+About the Organization:
+Our organization is a global leader in its field, committed to driving positive change and creating a better future for all. We value diversity, inclusion, and innovation, and we are dedicated to providing a supportive and inclusive work environment where everyone can thrive. Join us and be part of a team that is making a difference in the world.
+
+Application Process:
+Interested candidates should submit a resume, cover letter, and portfolio (if applicable) through our online application portal. Shortlisted candidates will be contacted for an interview. We look forward to reviewing your application!`,
     posted_date: "2025-09-01",
     image_url: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=800&auto=format&fit=crop&q=60"
   },
@@ -67,7 +121,34 @@ const MOCK_OPPORTUNITIES = [
     visa_sponsorship: true,
     deadline: "2026-02-15",
     application_url: "#",
-    description: "Study in at least 2 European countries. Full funding included.",
+    description: `This is an exceptional opportunity for qualified candidates to join a world-class organization dedicated to making a global impact. You will be working with a diverse team of experts from around the world, tackling some of the most challenging problems in the industry.
+
+Key Responsibilities:
+- Lead and manage complex projects from conception to completion, ensuring all milestones are met on time and within budget.
+- Collaborate with cross-functional teams to design, develop, and deploy innovative solutions that address user needs and business goals.
+- Conduct in-depth research and analysis to identify trends, opportunities, and risks, and provide actionable insights to senior leadership.
+- Mentor and coach junior team members, fostering a culture of continuous learning and professional growth.
+- Represent the organization at international conferences, workshops, and industry events, building strong relationships with key stakeholders.
+
+Qualifications:
+- A master's degree or higher in a relevant field (e.g., Computer Science, Engineering, Business Administration, International Relations).
+- Minimum of 5 years of professional experience in a similar role, with a proven track record of success.
+- Strong leadership and communication skills, with the ability to influence and inspire others.
+- Fluency in English is required; proficiency in other languages is a plus.
+- Willingness to travel internationally as needed.
+
+Benefits:
+- Competitive salary and performance-based bonuses.
+- Comprehensive health, dental, and vision insurance plans.
+- Generous paid time off, including vacation days, holidays, and sick leave.
+- Professional development opportunities, including access to training programs and conferences.
+- Relocation assistance and visa sponsorship for qualified candidates.
+
+About the Organization:
+Our organization is a global leader in its field, committed to driving positive change and creating a better future for all. We value diversity, inclusion, and innovation, and we are dedicated to providing a supportive and inclusive work environment where everyone can thrive. Join us and be part of a team that is making a difference in the world.
+
+Application Process:
+Interested candidates should submit a resume, cover letter, and portfolio (if applicable) through our online application portal. Shortlisted candidates will be contacted for an interview. We look forward to reviewing your application!`,
     posted_date: "2025-10-20",
     image_url: "https://images.unsplash.com/photo-1509356843151-3e7d96241e11?w=800&auto=format&fit=crop&q=60"
   },
@@ -81,7 +162,34 @@ const MOCK_OPPORTUNITIES = [
     visa_sponsorship: true,
     deadline: "Varies",
     application_url: "#",
-    description: "Grants for graduate students, young professionals and artists.",
+    description: `This is an exceptional opportunity for qualified candidates to join a world-class organization dedicated to making a global impact. You will be working with a diverse team of experts from around the world, tackling some of the most challenging problems in the industry.
+
+Key Responsibilities:
+- Lead and manage complex projects from conception to completion, ensuring all milestones are met on time and within budget.
+- Collaborate with cross-functional teams to design, develop, and deploy innovative solutions that address user needs and business goals.
+- Conduct in-depth research and analysis to identify trends, opportunities, and risks, and provide actionable insights to senior leadership.
+- Mentor and coach junior team members, fostering a culture of continuous learning and professional growth.
+- Represent the organization at international conferences, workshops, and industry events, building strong relationships with key stakeholders.
+
+Qualifications:
+- A master's degree or higher in a relevant field (e.g., Computer Science, Engineering, Business Administration, International Relations).
+- Minimum of 5 years of professional experience in a similar role, with a proven track record of success.
+- Strong leadership and communication skills, with the ability to influence and inspire others.
+- Fluency in English is required; proficiency in other languages is a plus.
+- Willingness to travel internationally as needed.
+
+Benefits:
+- Competitive salary and performance-based bonuses.
+- Comprehensive health, dental, and vision insurance plans.
+- Generous paid time off, including vacation days, holidays, and sick leave.
+- Professional development opportunities, including access to training programs and conferences.
+- Relocation assistance and visa sponsorship for qualified candidates.
+
+About the Organization:
+Our organization is a global leader in its field, committed to driving positive change and creating a better future for all. We value diversity, inclusion, and innovation, and we are dedicated to providing a supportive and inclusive work environment where everyone can thrive. Join us and be part of a team that is making a difference in the world.
+
+Application Process:
+Interested candidates should submit a resume, cover letter, and portfolio (if applicable) through our online application portal. Shortlisted candidates will be contacted for an interview. We look forward to reviewing your application!`,
     posted_date: "2025-08-15",
     image_url: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?w=800&auto=format&fit=crop&q=60"
   },
@@ -98,7 +206,34 @@ const MOCK_OPPORTUNITIES = [
     visa_sponsorship: true,
     deadline: "2026-04-15",
     application_url: "https://lifeatspotify.com/",
-    description: "Join the Platform team. Comprehensive relocation package to Stockholm provided.",
+    description: `This is an exceptional opportunity for qualified candidates to join a world-class organization dedicated to making a global impact. You will be working with a diverse team of experts from around the world, tackling some of the most challenging problems in the industry.
+
+Key Responsibilities:
+- Lead and manage complex projects from conception to completion, ensuring all milestones are met on time and within budget.
+- Collaborate with cross-functional teams to design, develop, and deploy innovative solutions that address user needs and business goals.
+- Conduct in-depth research and analysis to identify trends, opportunities, and risks, and provide actionable insights to senior leadership.
+- Mentor and coach junior team members, fostering a culture of continuous learning and professional growth.
+- Represent the organization at international conferences, workshops, and industry events, building strong relationships with key stakeholders.
+
+Qualifications:
+- A master's degree or higher in a relevant field (e.g., Computer Science, Engineering, Business Administration, International Relations).
+- Minimum of 5 years of professional experience in a similar role, with a proven track record of success.
+- Strong leadership and communication skills, with the ability to influence and inspire others.
+- Fluency in English is required; proficiency in other languages is a plus.
+- Willingness to travel internationally as needed.
+
+Benefits:
+- Competitive salary and performance-based bonuses.
+- Comprehensive health, dental, and vision insurance plans.
+- Generous paid time off, including vacation days, holidays, and sick leave.
+- Professional development opportunities, including access to training programs and conferences.
+- Relocation assistance and visa sponsorship for qualified candidates.
+
+About the Organization:
+Our organization is a global leader in its field, committed to driving positive change and creating a better future for all. We value diversity, inclusion, and innovation, and we are dedicated to providing a supportive and inclusive work environment where everyone can thrive. Join us and be part of a team that is making a difference in the world.
+
+Application Process:
+Interested candidates should submit a resume, cover letter, and portfolio (if applicable) through our online application portal. Shortlisted candidates will be contacted for an interview. We look forward to reviewing your application!`,
     posted_date: "2025-10-25",
     image_url: "https://images.unsplash.com/photo-1614680376593-902f74cf0d41?w=800&auto=format&fit=crop&q=60"
   },
@@ -112,7 +247,34 @@ const MOCK_OPPORTUNITIES = [
     visa_sponsorship: true,
     deadline: "2026-01-20",
     application_url: "#",
-    description: "Design payment experiences for millions of users.",
+    description: `This is an exceptional opportunity for qualified candidates to join a world-class organization dedicated to making a global impact. You will be working with a diverse team of experts from around the world, tackling some of the most challenging problems in the industry.
+
+Key Responsibilities:
+- Lead and manage complex projects from conception to completion, ensuring all milestones are met on time and within budget.
+- Collaborate with cross-functional teams to design, develop, and deploy innovative solutions that address user needs and business goals.
+- Conduct in-depth research and analysis to identify trends, opportunities, and risks, and provide actionable insights to senior leadership.
+- Mentor and coach junior team members, fostering a culture of continuous learning and professional growth.
+- Represent the organization at international conferences, workshops, and industry events, building strong relationships with key stakeholders.
+
+Qualifications:
+- A master's degree or higher in a relevant field (e.g., Computer Science, Engineering, Business Administration, International Relations).
+- Minimum of 5 years of professional experience in a similar role, with a proven track record of success.
+- Strong leadership and communication skills, with the ability to influence and inspire others.
+- Fluency in English is required; proficiency in other languages is a plus.
+- Willingness to travel internationally as needed.
+
+Benefits:
+- Competitive salary and performance-based bonuses.
+- Comprehensive health, dental, and vision insurance plans.
+- Generous paid time off, including vacation days, holidays, and sick leave.
+- Professional development opportunities, including access to training programs and conferences.
+- Relocation assistance and visa sponsorship for qualified candidates.
+
+About the Organization:
+Our organization is a global leader in its field, committed to driving positive change and creating a better future for all. We value diversity, inclusion, and innovation, and we are dedicated to providing a supportive and inclusive work environment where everyone can thrive. Join us and be part of a team that is making a difference in the world.
+
+Application Process:
+Interested candidates should submit a resume, cover letter, and portfolio (if applicable) through our online application portal. Shortlisted candidates will be contacted for an interview. We look forward to reviewing your application!`,
     posted_date: "2025-10-22",
     image_url: "https://images.unsplash.com/photo-1556740758-90de374c12ad?w=800&auto=format&fit=crop&q=60"
   },
@@ -126,7 +288,34 @@ const MOCK_OPPORTUNITIES = [
     visa_sponsorship: true,
     deadline: "Rolling",
     application_url: "#",
-    description: "Build the next generation of mobile apps.",
+    description: `This is an exceptional opportunity for qualified candidates to join a world-class organization dedicated to making a global impact. You will be working with a diverse team of experts from around the world, tackling some of the most challenging problems in the industry.
+
+Key Responsibilities:
+- Lead and manage complex projects from conception to completion, ensuring all milestones are met on time and within budget.
+- Collaborate with cross-functional teams to design, develop, and deploy innovative solutions that address user needs and business goals.
+- Conduct in-depth research and analysis to identify trends, opportunities, and risks, and provide actionable insights to senior leadership.
+- Mentor and coach junior team members, fostering a culture of continuous learning and professional growth.
+- Represent the organization at international conferences, workshops, and industry events, building strong relationships with key stakeholders.
+
+Qualifications:
+- A master's degree or higher in a relevant field (e.g., Computer Science, Engineering, Business Administration, International Relations).
+- Minimum of 5 years of professional experience in a similar role, with a proven track record of success.
+- Strong leadership and communication skills, with the ability to influence and inspire others.
+- Fluency in English is required; proficiency in other languages is a plus.
+- Willingness to travel internationally as needed.
+
+Benefits:
+- Competitive salary and performance-based bonuses.
+- Comprehensive health, dental, and vision insurance plans.
+- Generous paid time off, including vacation days, holidays, and sick leave.
+- Professional development opportunities, including access to training programs and conferences.
+- Relocation assistance and visa sponsorship for qualified candidates.
+
+About the Organization:
+Our organization is a global leader in its field, committed to driving positive change and creating a better future for all. We value diversity, inclusion, and innovation, and we are dedicated to providing a supportive and inclusive work environment where everyone can thrive. Join us and be part of a team that is making a difference in the world.
+
+Application Process:
+Interested candidates should submit a resume, cover letter, and portfolio (if applicable) through our online application portal. Shortlisted candidates will be contacted for an interview. We look forward to reviewing your application!`,
     posted_date: "2025-10-26",
     image_url: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&auto=format&fit=crop&q=60"
   },
@@ -140,7 +329,34 @@ const MOCK_OPPORTUNITIES = [
     visa_sponsorship: true,
     deadline: "2026-03-01",
     application_url: "#",
-    description: "Analyze data to help merchants succeed.",
+    description: `This is an exceptional opportunity for qualified candidates to join a world-class organization dedicated to making a global impact. You will be working with a diverse team of experts from around the world, tackling some of the most challenging problems in the industry.
+
+Key Responsibilities:
+- Lead and manage complex projects from conception to completion, ensuring all milestones are met on time and within budget.
+- Collaborate with cross-functional teams to design, develop, and deploy innovative solutions that address user needs and business goals.
+- Conduct in-depth research and analysis to identify trends, opportunities, and risks, and provide actionable insights to senior leadership.
+- Mentor and coach junior team members, fostering a culture of continuous learning and professional growth.
+- Represent the organization at international conferences, workshops, and industry events, building strong relationships with key stakeholders.
+
+Qualifications:
+- A master's degree or higher in a relevant field (e.g., Computer Science, Engineering, Business Administration, International Relations).
+- Minimum of 5 years of professional experience in a similar role, with a proven track record of success.
+- Strong leadership and communication skills, with the ability to influence and inspire others.
+- Fluency in English is required; proficiency in other languages is a plus.
+- Willingness to travel internationally as needed.
+
+Benefits:
+- Competitive salary and performance-based bonuses.
+- Comprehensive health, dental, and vision insurance plans.
+- Generous paid time off, including vacation days, holidays, and sick leave.
+- Professional development opportunities, including access to training programs and conferences.
+- Relocation assistance and visa sponsorship for qualified candidates.
+
+About the Organization:
+Our organization is a global leader in its field, committed to driving positive change and creating a better future for all. We value diversity, inclusion, and innovation, and we are dedicated to providing a supportive and inclusive work environment where everyone can thrive. Join us and be part of a team that is making a difference in the world.
+
+Application Process:
+Interested candidates should submit a resume, cover letter, and portfolio (if applicable) through our online application portal. Shortlisted candidates will be contacted for an interview. We look forward to reviewing your application!`,
     posted_date: "2025-10-18",
     image_url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=60"
   },
@@ -157,7 +373,34 @@ const MOCK_OPPORTUNITIES = [
     visa_sponsorship: true,
     deadline: "Rolling",
     application_url: "https://technation.io/visa/",
-    description: "Endorsement for exceptional talent in digital technology. No job offer needed initially.",
+    description: `This is an exceptional opportunity for qualified candidates to join a world-class organization dedicated to making a global impact. You will be working with a diverse team of experts from around the world, tackling some of the most challenging problems in the industry.
+
+Key Responsibilities:
+- Lead and manage complex projects from conception to completion, ensuring all milestones are met on time and within budget.
+- Collaborate with cross-functional teams to design, develop, and deploy innovative solutions that address user needs and business goals.
+- Conduct in-depth research and analysis to identify trends, opportunities, and risks, and provide actionable insights to senior leadership.
+- Mentor and coach junior team members, fostering a culture of continuous learning and professional growth.
+- Represent the organization at international conferences, workshops, and industry events, building strong relationships with key stakeholders.
+
+Qualifications:
+- A master's degree or higher in a relevant field (e.g., Computer Science, Engineering, Business Administration, International Relations).
+- Minimum of 5 years of professional experience in a similar role, with a proven track record of success.
+- Strong leadership and communication skills, with the ability to influence and inspire others.
+- Fluency in English is required; proficiency in other languages is a plus.
+- Willingness to travel internationally as needed.
+
+Benefits:
+- Competitive salary and performance-based bonuses.
+- Comprehensive health, dental, and vision insurance plans.
+- Generous paid time off, including vacation days, holidays, and sick leave.
+- Professional development opportunities, including access to training programs and conferences.
+- Relocation assistance and visa sponsorship for qualified candidates.
+
+About the Organization:
+Our organization is a global leader in its field, committed to driving positive change and creating a better future for all. We value diversity, inclusion, and innovation, and we are dedicated to providing a supportive and inclusive work environment where everyone can thrive. Join us and be part of a team that is making a difference in the world.
+
+Application Process:
+Interested candidates should submit a resume, cover letter, and portfolio (if applicable) through our online application portal. Shortlisted candidates will be contacted for an interview. We look forward to reviewing your application!`,
     posted_date: "2025-01-01",
     image_url: "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?w=800&auto=format&fit=crop&q=60"
   },
@@ -172,7 +415,34 @@ const MOCK_OPPORTUNITIES = [
     visa_sponsorship: true,
     deadline: "Rolling",
     application_url: "https://canada.ca/express-entry",
-    description: "Permanent residency pathway for STEM professionals. High chance for software engineers.",
+    description: `This is an exceptional opportunity for qualified candidates to join a world-class organization dedicated to making a global impact. You will be working with a diverse team of experts from around the world, tackling some of the most challenging problems in the industry.
+
+Key Responsibilities:
+- Lead and manage complex projects from conception to completion, ensuring all milestones are met on time and within budget.
+- Collaborate with cross-functional teams to design, develop, and deploy innovative solutions that address user needs and business goals.
+- Conduct in-depth research and analysis to identify trends, opportunities, and risks, and provide actionable insights to senior leadership.
+- Mentor and coach junior team members, fostering a culture of continuous learning and professional growth.
+- Represent the organization at international conferences, workshops, and industry events, building strong relationships with key stakeholders.
+
+Qualifications:
+- A master's degree or higher in a relevant field (e.g., Computer Science, Engineering, Business Administration, International Relations).
+- Minimum of 5 years of professional experience in a similar role, with a proven track record of success.
+- Strong leadership and communication skills, with the ability to influence and inspire others.
+- Fluency in English is required; proficiency in other languages is a plus.
+- Willingness to travel internationally as needed.
+
+Benefits:
+- Competitive salary and performance-based bonuses.
+- Comprehensive health, dental, and vision insurance plans.
+- Generous paid time off, including vacation days, holidays, and sick leave.
+- Professional development opportunities, including access to training programs and conferences.
+- Relocation assistance and visa sponsorship for qualified candidates.
+
+About the Organization:
+Our organization is a global leader in its field, committed to driving positive change and creating a better future for all. We value diversity, inclusion, and innovation, and we are dedicated to providing a supportive and inclusive work environment where everyone can thrive. Join us and be part of a team that is making a difference in the world.
+
+Application Process:
+Interested candidates should submit a resume, cover letter, and portfolio (if applicable) through our online application portal. Shortlisted candidates will be contacted for an interview. We look forward to reviewing your application!`,
     posted_date: "2025-05-01",
     image_url: "https://images.unsplash.com/photo-1517935706615-2717063c2225?w=800&auto=format&fit=crop&q=60"
   },
@@ -186,7 +456,34 @@ const MOCK_OPPORTUNITIES = [
     visa_sponsorship: false, // It's a visa itself
     deadline: "Rolling",
     application_url: "#",
-    description: "Points-based system to look for work in Germany for up to a year.",
+    description: `This is an exceptional opportunity for qualified candidates to join a world-class organization dedicated to making a global impact. You will be working with a diverse team of experts from around the world, tackling some of the most challenging problems in the industry.
+
+Key Responsibilities:
+- Lead and manage complex projects from conception to completion, ensuring all milestones are met on time and within budget.
+- Collaborate with cross-functional teams to design, develop, and deploy innovative solutions that address user needs and business goals.
+- Conduct in-depth research and analysis to identify trends, opportunities, and risks, and provide actionable insights to senior leadership.
+- Mentor and coach junior team members, fostering a culture of continuous learning and professional growth.
+- Represent the organization at international conferences, workshops, and industry events, building strong relationships with key stakeholders.
+
+Qualifications:
+- A master's degree or higher in a relevant field (e.g., Computer Science, Engineering, Business Administration, International Relations).
+- Minimum of 5 years of professional experience in a similar role, with a proven track record of success.
+- Strong leadership and communication skills, with the ability to influence and inspire others.
+- Fluency in English is required; proficiency in other languages is a plus.
+- Willingness to travel internationally as needed.
+
+Benefits:
+- Competitive salary and performance-based bonuses.
+- Comprehensive health, dental, and vision insurance plans.
+- Generous paid time off, including vacation days, holidays, and sick leave.
+- Professional development opportunities, including access to training programs and conferences.
+- Relocation assistance and visa sponsorship for qualified candidates.
+
+About the Organization:
+Our organization is a global leader in its field, committed to driving positive change and creating a better future for all. We value diversity, inclusion, and innovation, and we are dedicated to providing a supportive and inclusive work environment where everyone can thrive. Join us and be part of a team that is making a difference in the world.
+
+Application Process:
+Interested candidates should submit a resume, cover letter, and portfolio (if applicable) through our online application portal. Shortlisted candidates will be contacted for an interview. We look forward to reviewing your application!`,
     posted_date: "2025-06-01",
     image_url: "https://images.unsplash.com/photo-1560969184-10fe8719e047?w=800&auto=format&fit=crop&q=60"
   },
@@ -203,7 +500,34 @@ const MOCK_OPPORTUNITIES = [
     visa_sponsorship: true,
     deadline: "2025-12-15",
     application_url: "https://obama.org",
-    description: "One-year leadership benefits. Includes stipend and housing in New York.",
+    description: `This is an exceptional opportunity for qualified candidates to join a world-class organization dedicated to making a global impact. You will be working with a diverse team of experts from around the world, tackling some of the most challenging problems in the industry.
+
+Key Responsibilities:
+- Lead and manage complex projects from conception to completion, ensuring all milestones are met on time and within budget.
+- Collaborate with cross-functional teams to design, develop, and deploy innovative solutions that address user needs and business goals.
+- Conduct in-depth research and analysis to identify trends, opportunities, and risks, and provide actionable insights to senior leadership.
+- Mentor and coach junior team members, fostering a culture of continuous learning and professional growth.
+- Represent the organization at international conferences, workshops, and industry events, building strong relationships with key stakeholders.
+
+Qualifications:
+- A master's degree or higher in a relevant field (e.g., Computer Science, Engineering, Business Administration, International Relations).
+- Minimum of 5 years of professional experience in a similar role, with a proven track record of success.
+- Strong leadership and communication skills, with the ability to influence and inspire others.
+- Fluency in English is required; proficiency in other languages is a plus.
+- Willingness to travel internationally as needed.
+
+Benefits:
+- Competitive salary and performance-based bonuses.
+- Comprehensive health, dental, and vision insurance plans.
+- Generous paid time off, including vacation days, holidays, and sick leave.
+- Professional development opportunities, including access to training programs and conferences.
+- Relocation assistance and visa sponsorship for qualified candidates.
+
+About the Organization:
+Our organization is a global leader in its field, committed to driving positive change and creating a better future for all. We value diversity, inclusion, and innovation, and we are dedicated to providing a supportive and inclusive work environment where everyone can thrive. Join us and be part of a team that is making a difference in the world.
+
+Application Process:
+Interested candidates should submit a resume, cover letter, and portfolio (if applicable) through our online application portal. Shortlisted candidates will be contacted for an interview. We look forward to reviewing your application!`,
     posted_date: "2025-09-10",
     image_url: "https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=800&auto=format&fit=crop&q=60"
   },
@@ -217,7 +541,34 @@ const MOCK_OPPORTUNITIES = [
     visa_sponsorship: true, // Often assists
     deadline: "2026-01-10",
     application_url: "#",
-    description: "For social entrepreneurs launching bold new organizations.",
+    description: `This is an exceptional opportunity for qualified candidates to join a world-class organization dedicated to making a global impact. You will be working with a diverse team of experts from around the world, tackling some of the most challenging problems in the industry.
+
+Key Responsibilities:
+- Lead and manage complex projects from conception to completion, ensuring all milestones are met on time and within budget.
+- Collaborate with cross-functional teams to design, develop, and deploy innovative solutions that address user needs and business goals.
+- Conduct in-depth research and analysis to identify trends, opportunities, and risks, and provide actionable insights to senior leadership.
+- Mentor and coach junior team members, fostering a culture of continuous learning and professional growth.
+- Represent the organization at international conferences, workshops, and industry events, building strong relationships with key stakeholders.
+
+Qualifications:
+- A master's degree or higher in a relevant field (e.g., Computer Science, Engineering, Business Administration, International Relations).
+- Minimum of 5 years of professional experience in a similar role, with a proven track record of success.
+- Strong leadership and communication skills, with the ability to influence and inspire others.
+- Fluency in English is required; proficiency in other languages is a plus.
+- Willingness to travel internationally as needed.
+
+Benefits:
+- Competitive salary and performance-based bonuses.
+- Comprehensive health, dental, and vision insurance plans.
+- Generous paid time off, including vacation days, holidays, and sick leave.
+- Professional development opportunities, including access to training programs and conferences.
+- Relocation assistance and visa sponsorship for qualified candidates.
+
+About the Organization:
+Our organization is a global leader in its field, committed to driving positive change and creating a better future for all. We value diversity, inclusion, and innovation, and we are dedicated to providing a supportive and inclusive work environment where everyone can thrive. Join us and be part of a team that is making a difference in the world.
+
+Application Process:
+Interested candidates should submit a resume, cover letter, and portfolio (if applicable) through our online application portal. Shortlisted candidates will be contacted for an interview. We look forward to reviewing your application!`,
     posted_date: "2025-08-01",
     image_url: "https://images.unsplash.com/photo-1531545514256-b1400bc00f31?w=800&auto=format&fit=crop&q=60"
   },
@@ -232,7 +583,34 @@ const MOCK_OPPORTUNITIES = [
     visa_sponsorship: true, // Founder visa support
     deadline: "2026-03-01",
     application_url: "#",
-    description: "The world's premier startup accelerator.",
+    description: `This is an exceptional opportunity for qualified candidates to join a world-class organization dedicated to making a global impact. You will be working with a diverse team of experts from around the world, tackling some of the most challenging problems in the industry.
+
+Key Responsibilities:
+- Lead and manage complex projects from conception to completion, ensuring all milestones are met on time and within budget.
+- Collaborate with cross-functional teams to design, develop, and deploy innovative solutions that address user needs and business goals.
+- Conduct in-depth research and analysis to identify trends, opportunities, and risks, and provide actionable insights to senior leadership.
+- Mentor and coach junior team members, fostering a culture of continuous learning and professional growth.
+- Represent the organization at international conferences, workshops, and industry events, building strong relationships with key stakeholders.
+
+Qualifications:
+- A master's degree or higher in a relevant field (e.g., Computer Science, Engineering, Business Administration, International Relations).
+- Minimum of 5 years of professional experience in a similar role, with a proven track record of success.
+- Strong leadership and communication skills, with the ability to influence and inspire others.
+- Fluency in English is required; proficiency in other languages is a plus.
+- Willingness to travel internationally as needed.
+
+Benefits:
+- Competitive salary and performance-based bonuses.
+- Comprehensive health, dental, and vision insurance plans.
+- Generous paid time off, including vacation days, holidays, and sick leave.
+- Professional development opportunities, including access to training programs and conferences.
+- Relocation assistance and visa sponsorship for qualified candidates.
+
+About the Organization:
+Our organization is a global leader in its field, committed to driving positive change and creating a better future for all. We value diversity, inclusion, and innovation, and we are dedicated to providing a supportive and inclusive work environment where everyone can thrive. Join us and be part of a team that is making a difference in the world.
+
+Application Process:
+Interested candidates should submit a resume, cover letter, and portfolio (if applicable) through our online application portal. Shortlisted candidates will be contacted for an interview. We look forward to reviewing your application!`,
     posted_date: "2025-09-01",
     image_url: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=60"
   },
@@ -246,7 +624,34 @@ const MOCK_OPPORTUNITIES = [
     visa_sponsorship: true,
     deadline: "Rolling",
     application_url: "#",
-    description: "Visa for startup founders, investors, and employees.",
+    description: `This is an exceptional opportunity for qualified candidates to join a world-class organization dedicated to making a global impact. You will be working with a diverse team of experts from around the world, tackling some of the most challenging problems in the industry.
+
+Key Responsibilities:
+- Lead and manage complex projects from conception to completion, ensuring all milestones are met on time and within budget.
+- Collaborate with cross-functional teams to design, develop, and deploy innovative solutions that address user needs and business goals.
+- Conduct in-depth research and analysis to identify trends, opportunities, and risks, and provide actionable insights to senior leadership.
+- Mentor and coach junior team members, fostering a culture of continuous learning and professional growth.
+- Represent the organization at international conferences, workshops, and industry events, building strong relationships with key stakeholders.
+
+Qualifications:
+- A master's degree or higher in a relevant field (e.g., Computer Science, Engineering, Business Administration, International Relations).
+- Minimum of 5 years of professional experience in a similar role, with a proven track record of success.
+- Strong leadership and communication skills, with the ability to influence and inspire others.
+- Fluency in English is required; proficiency in other languages is a plus.
+- Willingness to travel internationally as needed.
+
+Benefits:
+- Competitive salary and performance-based bonuses.
+- Comprehensive health, dental, and vision insurance plans.
+- Generous paid time off, including vacation days, holidays, and sick leave.
+- Professional development opportunities, including access to training programs and conferences.
+- Relocation assistance and visa sponsorship for qualified candidates.
+
+About the Organization:
+Our organization is a global leader in its field, committed to driving positive change and creating a better future for all. We value diversity, inclusion, and innovation, and we are dedicated to providing a supportive and inclusive work environment where everyone can thrive. Join us and be part of a team that is making a difference in the world.
+
+Application Process:
+Interested candidates should submit a resume, cover letter, and portfolio (if applicable) through our online application portal. Shortlisted candidates will be contacted for an interview. We look forward to reviewing your application!`,
     posted_date: "2025-01-01",
     image_url: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&auto=format&fit=crop&q=60"
   },
@@ -260,7 +665,34 @@ const MOCK_OPPORTUNITIES = [
     visa_sponsorship: true,
     deadline: "Rolling",
     application_url: "#",
-    description: "For exceptional talent and promise in digital technology.",
+    description: `This is an exceptional opportunity for qualified candidates to join a world-class organization dedicated to making a global impact. You will be working with a diverse team of experts from around the world, tackling some of the most challenging problems in the industry.
+
+Key Responsibilities:
+- Lead and manage complex projects from conception to completion, ensuring all milestones are met on time and within budget.
+- Collaborate with cross-functional teams to design, develop, and deploy innovative solutions that address user needs and business goals.
+- Conduct in-depth research and analysis to identify trends, opportunities, and risks, and provide actionable insights to senior leadership.
+- Mentor and coach junior team members, fostering a culture of continuous learning and professional growth.
+- Represent the organization at international conferences, workshops, and industry events, building strong relationships with key stakeholders.
+
+Qualifications:
+- A master's degree or higher in a relevant field (e.g., Computer Science, Engineering, Business Administration, International Relations).
+- Minimum of 5 years of professional experience in a similar role, with a proven track record of success.
+- Strong leadership and communication skills, with the ability to influence and inspire others.
+- Fluency in English is required; proficiency in other languages is a plus.
+- Willingness to travel internationally as needed.
+
+Benefits:
+- Competitive salary and performance-based bonuses.
+- Comprehensive health, dental, and vision insurance plans.
+- Generous paid time off, including vacation days, holidays, and sick leave.
+- Professional development opportunities, including access to training programs and conferences.
+- Relocation assistance and visa sponsorship for qualified candidates.
+
+About the Organization:
+Our organization is a global leader in its field, committed to driving positive change and creating a better future for all. We value diversity, inclusion, and innovation, and we are dedicated to providing a supportive and inclusive work environment where everyone can thrive. Join us and be part of a team that is making a difference in the world.
+
+Application Process:
+Interested candidates should submit a resume, cover letter, and portfolio (if applicable) through our online application portal. Shortlisted candidates will be contacted for an interview. We look forward to reviewing your application!`,
     hot: true,
     posted_date: "2025-09-01",
     image_url: "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?w=800&auto=format&fit=crop&q=60"
@@ -275,7 +707,34 @@ const MOCK_OPPORTUNITIES = [
     visa_sponsorship: true,
     deadline: "2025-09-20",
     application_url: "#",
-    description: "Master's degree and leadership program in Beijing.",
+    description: `This is an exceptional opportunity for qualified candidates to join a world-class organization dedicated to making a global impact. You will be working with a diverse team of experts from around the world, tackling some of the most challenging problems in the industry.
+
+Key Responsibilities:
+- Lead and manage complex projects from conception to completion, ensuring all milestones are met on time and within budget.
+- Collaborate with cross-functional teams to design, develop, and deploy innovative solutions that address user needs and business goals.
+- Conduct in-depth research and analysis to identify trends, opportunities, and risks, and provide actionable insights to senior leadership.
+- Mentor and coach junior team members, fostering a culture of continuous learning and professional growth.
+- Represent the organization at international conferences, workshops, and industry events, building strong relationships with key stakeholders.
+
+Qualifications:
+- A master's degree or higher in a relevant field (e.g., Computer Science, Engineering, Business Administration, International Relations).
+- Minimum of 5 years of professional experience in a similar role, with a proven track record of success.
+- Strong leadership and communication skills, with the ability to influence and inspire others.
+- Fluency in English is required; proficiency in other languages is a plus.
+- Willingness to travel internationally as needed.
+
+Benefits:
+- Competitive salary and performance-based bonuses.
+- Comprehensive health, dental, and vision insurance plans.
+- Generous paid time off, including vacation days, holidays, and sick leave.
+- Professional development opportunities, including access to training programs and conferences.
+- Relocation assistance and visa sponsorship for qualified candidates.
+
+About the Organization:
+Our organization is a global leader in its field, committed to driving positive change and creating a better future for all. We value diversity, inclusion, and innovation, and we are dedicated to providing a supportive and inclusive work environment where everyone can thrive. Join us and be part of a team that is making a difference in the world.
+
+Application Process:
+Interested candidates should submit a resume, cover letter, and portfolio (if applicable) through our online application portal. Shortlisted candidates will be contacted for an interview. We look forward to reviewing your application!`,
     hot: true,
     posted_date: "2025-08-30",
     image_url: "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=800&auto=format&fit=crop&q=60"
@@ -290,7 +749,34 @@ const MOCK_OPPORTUNITIES = [
     visa_sponsorship: false,
     deadline: "Rolling",
     application_url: "#",
-    description: "Two-year program for young people who want to build new things.",
+    description: `This is an exceptional opportunity for qualified candidates to join a world-class organization dedicated to making a global impact. You will be working with a diverse team of experts from around the world, tackling some of the most challenging problems in the industry.
+
+Key Responsibilities:
+- Lead and manage complex projects from conception to completion, ensuring all milestones are met on time and within budget.
+- Collaborate with cross-functional teams to design, develop, and deploy innovative solutions that address user needs and business goals.
+- Conduct in-depth research and analysis to identify trends, opportunities, and risks, and provide actionable insights to senior leadership.
+- Mentor and coach junior team members, fostering a culture of continuous learning and professional growth.
+- Represent the organization at international conferences, workshops, and industry events, building strong relationships with key stakeholders.
+
+Qualifications:
+- A master's degree or higher in a relevant field (e.g., Computer Science, Engineering, Business Administration, International Relations).
+- Minimum of 5 years of professional experience in a similar role, with a proven track record of success.
+- Strong leadership and communication skills, with the ability to influence and inspire others.
+- Fluency in English is required; proficiency in other languages is a plus.
+- Willingness to travel internationally as needed.
+
+Benefits:
+- Competitive salary and performance-based bonuses.
+- Comprehensive health, dental, and vision insurance plans.
+- Generous paid time off, including vacation days, holidays, and sick leave.
+- Professional development opportunities, including access to training programs and conferences.
+- Relocation assistance and visa sponsorship for qualified candidates.
+
+About the Organization:
+Our organization is a global leader in its field, committed to driving positive change and creating a better future for all. We value diversity, inclusion, and innovation, and we are dedicated to providing a supportive and inclusive work environment where everyone can thrive. Join us and be part of a team that is making a difference in the world.
+
+Application Process:
+Interested candidates should submit a resume, cover letter, and portfolio (if applicable) through our online application portal. Shortlisted candidates will be contacted for an interview. We look forward to reviewing your application!`,
     hot: true,
     posted_date: "2025-09-15",
     image_url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&auto=format&fit=crop&q=60"
@@ -305,7 +791,34 @@ const MOCK_OPPORTUNITIES = [
     visa_sponsorship: true,
     deadline: "2026-10-01",
     application_url: "#",
-    description: "Apply for the Winter 2027 batch.",
+    description: `This is an exceptional opportunity for qualified candidates to join a world-class organization dedicated to making a global impact. You will be working with a diverse team of experts from around the world, tackling some of the most challenging problems in the industry.
+
+Key Responsibilities:
+- Lead and manage complex projects from conception to completion, ensuring all milestones are met on time and within budget.
+- Collaborate with cross-functional teams to design, develop, and deploy innovative solutions that address user needs and business goals.
+- Conduct in-depth research and analysis to identify trends, opportunities, and risks, and provide actionable insights to senior leadership.
+- Mentor and coach junior team members, fostering a culture of continuous learning and professional growth.
+- Represent the organization at international conferences, workshops, and industry events, building strong relationships with key stakeholders.
+
+Qualifications:
+- A master's degree or higher in a relevant field (e.g., Computer Science, Engineering, Business Administration, International Relations).
+- Minimum of 5 years of professional experience in a similar role, with a proven track record of success.
+- Strong leadership and communication skills, with the ability to influence and inspire others.
+- Fluency in English is required; proficiency in other languages is a plus.
+- Willingness to travel internationally as needed.
+
+Benefits:
+- Competitive salary and performance-based bonuses.
+- Comprehensive health, dental, and vision insurance plans.
+- Generous paid time off, including vacation days, holidays, and sick leave.
+- Professional development opportunities, including access to training programs and conferences.
+- Relocation assistance and visa sponsorship for qualified candidates.
+
+About the Organization:
+Our organization is a global leader in its field, committed to driving positive change and creating a better future for all. We value diversity, inclusion, and innovation, and we are dedicated to providing a supportive and inclusive work environment where everyone can thrive. Join us and be part of a team that is making a difference in the world.
+
+Application Process:
+Interested candidates should submit a resume, cover letter, and portfolio (if applicable) through our online application portal. Shortlisted candidates will be contacted for an interview. We look forward to reviewing your application!`,
     hot: true,
     posted_date: "2025-10-01",
     image_url: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=800&auto=format&fit=crop&q=60"
@@ -320,7 +833,34 @@ const MOCK_OPPORTUNITIES = [
     visa_sponsorship: true,
     deadline: "2025-10-10",
     application_url: "#",
-    description: "Postgraduate scholarship at the University of Cambridge.",
+    description: `This is an exceptional opportunity for qualified candidates to join a world-class organization dedicated to making a global impact. You will be working with a diverse team of experts from around the world, tackling some of the most challenging problems in the industry.
+
+Key Responsibilities:
+- Lead and manage complex projects from conception to completion, ensuring all milestones are met on time and within budget.
+- Collaborate with cross-functional teams to design, develop, and deploy innovative solutions that address user needs and business goals.
+- Conduct in-depth research and analysis to identify trends, opportunities, and risks, and provide actionable insights to senior leadership.
+- Mentor and coach junior team members, fostering a culture of continuous learning and professional growth.
+- Represent the organization at international conferences, workshops, and industry events, building strong relationships with key stakeholders.
+
+Qualifications:
+- A master's degree or higher in a relevant field (e.g., Computer Science, Engineering, Business Administration, International Relations).
+- Minimum of 5 years of professional experience in a similar role, with a proven track record of success.
+- Strong leadership and communication skills, with the ability to influence and inspire others.
+- Fluency in English is required; proficiency in other languages is a plus.
+- Willingness to travel internationally as needed.
+
+Benefits:
+- Competitive salary and performance-based bonuses.
+- Comprehensive health, dental, and vision insurance plans.
+- Generous paid time off, including vacation days, holidays, and sick leave.
+- Professional development opportunities, including access to training programs and conferences.
+- Relocation assistance and visa sponsorship for qualified candidates.
+
+About the Organization:
+Our organization is a global leader in its field, committed to driving positive change and creating a better future for all. We value diversity, inclusion, and innovation, and we are dedicated to providing a supportive and inclusive work environment where everyone can thrive. Join us and be part of a team that is making a difference in the world.
+
+Application Process:
+Interested candidates should submit a resume, cover letter, and portfolio (if applicable) through our online application portal. Shortlisted candidates will be contacted for an interview. We look forward to reviewing your application!`,
     hot: true,
     posted_date: "2025-09-01",
     image_url: "https://images.unsplash.com/photo-1532375810709-75b1da00537c?w=800&auto=format&fit=crop&q=60"
