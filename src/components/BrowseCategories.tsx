@@ -80,12 +80,12 @@ const CATEGORIES = [
 ];
 
 export function BrowseCategories() {
-    return (
-        <section className="bg-black border-t border-zinc-900 py-20">
-            <div className="container max-w-7xl mx-auto px-4">
-                <h2 className="text-xl font-bold text-white mb-12 text-center md:text-left">
-                    Browse Opportunities
-                </h2>
+        return (
+            <section className="bg-zinc-950 border-t-2 border-zinc-800 py-20">
+                <div className="container max-w-7xl mx-auto px-4">
+                    <h2 className="text-xl font-bold text-white mb-12 text-center md:text-left">
+                        Browse Opportunities
+                    </h2>
 
                 <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-10 gap-x-4">
                     {CATEGORIES.map((category) => (
@@ -98,10 +98,9 @@ export function BrowseCategories() {
                                     <li key={item}>
                                         <Link
                                             href="#"
-                                            className="text-sm text-zinc-400 hover:text-white group flex items-center gap-1 transition-colors"
+                                            className="text-sm text-zinc-400 hover:text-primary hover:bg-zinc-900 hover:pl-2 hover:border-l-2 hover:border-primary block py-1 transition-all duration-200"
                                         >
                                             {item}
-                                            <ArrowUpRight className="h-3 w-3 opacity-0 -translate-y-1 translate-x-1 group-hover:opacity-100 group-hover:translate-y-0 group-hover:translate-x-0 transition-all" />
                                         </Link>
                                     </li>
                                 ))}

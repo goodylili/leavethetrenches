@@ -928,7 +928,7 @@ export default function Home() {
         {/* Dynamic Hero Section */}
         <section className="relative pt-20 pb-12 md:pt-32 md:pb-16 overflow-hidden">
           {/* Background Ambient Glow */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-primary/5 blur-[120px] rounded-full pointer-events-none" />
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-primary/5 blur-[120px] rounded-none pointer-events-none" />
 
           <div className="container max-w-7xl mx-auto px-4 text-center relative z-10">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-foreground mb-6">
@@ -940,7 +940,7 @@ export default function Home() {
             </p>
 
             {/* Search Box Container */}
-            <div className="bg-black border border-zinc-900 p-2 rounded-2xl shadow-2xl flex flex-col md:flex-row gap-2 w-full mx-auto animate-in fade-in zoom-in duration-700 slide-in-from-bottom-4 delay-200">
+            <div className="bg-zinc-950 border-2 border-zinc-800 shadow-[4px_4px_0px_0px_#27272a] hover:border-primary hover:shadow-[4px_4px_0px_0px_var(--primary)] p-2 rounded-none flex flex-col md:flex-row gap-2 w-full mx-auto animate-in fade-in zoom-in duration-700 slide-in-from-bottom-4 delay-200 transition-all">
               <div className="relative flex-1 group">
                 <SearchIcon className="absolute left-4 top-3.5 h-5 w-5 text-zinc-500 group-focus-within:text-zinc-200 transition-colors" />
                 <Input
@@ -961,7 +961,7 @@ export default function Home() {
                   onValueChange={setLocation}
                 />
               </div>
-              <Button size="lg" className="h-12 rounded-2xl px-8 font-semibold text-base shadow-lg bg-white text-black hover:bg-zinc-200 transition-all hover:scale-105 active:scale-95">
+              <Button size="lg" className="h-12 rounded-none px-8 font-semibold text-base shadow-lg bg-primary text-primary-foreground hover:bg-primary/90 transition-all hover:scale-105 active:scale-95">
                 Search
               </Button>
             </div>
@@ -976,7 +976,7 @@ export default function Home() {
                     key={filter.value}
                     onClick={() => setSelectedCategory(filter.value)}
                     className={`
-                      flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 border
+                      flex items-center gap-2 px-4 py-2 rounded-none text-sm font-medium transition-all duration-200 border
                       ${isActive
                         ? "bg-primary text-primary-foreground border-primary"
                         : "bg-background text-muted-foreground border-border hover:border-foreground/20 hover:text-foreground"}
@@ -1054,8 +1054,8 @@ export default function Home() {
                 ))}
 
                 {filtered.length === 0 && (
-                  <div className="text-center py-32 rounded-lg border border-dashed border-border bg-card/30">
-                    <div className="inline-flex h-16 w-16 items-center justify-center rounded-lg bg-muted mb-4">
+                  <div className="text-center py-32 rounded-none border border-dashed border-border bg-card/30">
+                    <div className="inline-flex h-16 w-16 items-center justify-center rounded-none bg-muted mb-4">
                       <SearchIcon className="h-8 w-8 text-muted-foreground" />
                     </div>
                     <h3 className="text-lg font-medium">No results found</h3>

@@ -5,35 +5,35 @@
 @layer base {
   :root {
     /* Deep Dark Vercel-ish Theme */
-    --background: 0 0% 0%; /* Pure Black */
+    --background: 240 10% 3.9%; /* Zinc-950 #09090b */
     --foreground: 0 0% 98%;
 
-    --card: 0 0% 0%; /* Pure Black */
+    --card: 240 10% 3.9%; /* Zinc-950 */
     --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 0%;
+    --popover: 240 10% 3.9%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 0%;
+    --primary: 212 100% 48%; /* Vercel Blue #0070f3 */
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 9%; /* Zinc-900 ish */
+    --secondary: 240 4% 16%; /* Zinc-800 ish */
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 212 20% 70%; /* Tinted Blue Muted */
 
-    --accent: 0 0% 9%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 212 100% 48%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 12%; /* Darker border */
-    --input: 0 0% 12%;
-    --ring: 0 0% 83.9%;
+    --border: 240 4% 16%; /* Lighter border for contrast against dark grey */
+    --input: 240 4% 16%;
+    --ring: 212 100% 48%;
 
-    --radius: 0.5rem;
+    --radius: 0;
   }
 
   /* We can keep light mode variables just in case, but we will force the dark aesthetic for now via the body class or preference */
@@ -44,7 +44,7 @@
     --card-foreground: 240 10% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 3.9%;
-    --primary: 240 5.9% 10%;
+    --primary: 212 100% 48%;
     --primary-foreground: 0 0% 98%;
     --secondary: 240 4.8% 95.9%;
     --secondary-foreground: 240 5.9% 10%;
@@ -56,7 +56,7 @@
     --destructive-foreground: 0 0% 98%;
     --border: 240 5.9% 90%;
     --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    --ring: 212 100% 48%;
   }
 }
 
@@ -66,7 +66,14 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans antialiased text-pretty;
+    /* Subtle dot pattern similar to the image */
+    background-image: radial-gradient(circle at 1px 1px, #27272a 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight font-bold text-foreground;
   }
 }
 

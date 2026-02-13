@@ -10,21 +10,24 @@ import {
     NavigationMenuTrigger,
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { GraduationCap, Briefcase, Plane, Globe, BookOpen, Award, Building2, MapPin } from "lucide-react";
+
+import { GetAlertsButton } from "@/components/GetAlertsButton";
 
 export function Header() {
     return (
         <div className="container max-w-7xl mx-auto px-4 pt-6 z-50 relative">
             {/* Floating Header Card */}
-            <header className="rounded-2xl bg-black/90 backdrop-blur-md border border-zinc-900 text-white shadow-2xl pl-6 pr-2 py-2">
+            <header className="rounded-none bg-zinc-950 border-2 border-zinc-800 hover:border-primary shadow-[4px_4px_0px_0px_#27272a] hover:shadow-[4px_4px_0px_0px_var(--primary)] text-white pl-6 pr-2 py-2 transition-all">
                 <div className="flex h-12 items-center justify-between">
                     <div className="flex items-center gap-8">
                         <Link href="/" className="flex items-center gap-3">
-                            <div className="h-8 w-8 bg-white/10 rounded-full flex items-center justify-center border border-white/10">
+                            <div className="h-8 w-8 bg-primary/10 rounded-none flex items-center justify-center border border-primary/10">
                                 {/* Simplified Logo for Header */}
                                 <img src="/logo.svg" alt="LTT" className="h-5 w-5" />
                             </div>
-                            <span className="font-bold text-lg tracking-tight hidden sm:block">Leave the Trenches</span>
-                            <span className="font-bold text-lg tracking-tight sm:hidden">LTT</span>
+                            <span className="font-bold text-lg tracking-tight hidden sm:block text-primary">Leave the Trenches</span>
+                            <span className="font-bold text-lg tracking-tight sm:hidden text-primary">LTT</span>
                         </Link>
 
                         {/* Desktop Mega Menu */}
@@ -32,67 +35,79 @@ export function Header() {
                             <NavigationMenu>
                                 <NavigationMenuList>
                                     <NavigationMenuItem>
-                                        <NavigationMenuTrigger className="text-zinc-300 hover:text-white bg-transparent">Scholarships</NavigationMenuTrigger>
+                                        <NavigationMenuTrigger className="text-zinc-300 hover:text-primary bg-transparent font-medium">Opportunities</NavigationMenuTrigger>
                                         <NavigationMenuContent>
-                                            <ul className="grid gap-3 p-6 w-[400px] md:w-[500px] lg:w-[600px] lg:grid-cols-[.75fr_1fr]">
-                                                <li className="row-span-3">
-                                                    <NavigationMenuLink asChild>
-                                                        <a
-                                                            className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-zinc-800/50 to-zinc-900 p-6 no-underline outline-none focus:shadow-md"
-                                                            href="/scholarships"
-                                                        >
-                                                            <div className="h-24 w-24 bg-zinc-800 rounded-full mb-4 flex items-center justify-center text-3xl">🎓</div>
-                                                            <div className="mb-2 mt-4 text-lg font-medium text-white">
-                                                                Fully Funded
-                                                            </div>
-                                                            <p className="text-sm leading-tight text-zinc-400">
-                                                                Explore verified full scholarships.
-                                                            </p>
-                                                        </a>
-                                                    </NavigationMenuLink>
-                                                </li>
-                                                <ListItem href="/scholarships?type=masters" title="Masters Scholarships">
-                                                    Top rated programs for 2026 intake.
-                                                </ListItem>
-                                                <ListItem href="/scholarships?type=phd" title="PhD & Research">
-                                                    Grants and fully funded research positions.
-                                                </ListItem>
-                                                <ListItem href="/scholarships?type=undergrad" title="Undergraduate">
-                                                    Merit-based waivers and aid.
-                                                </ListItem>
-                                            </ul>
-                                            <div className="bg-zinc-900/50 p-4 border-t border-zinc-800">
-                                                <ul className="flex flex-wrap gap-x-6 gap-y-2 text-xs font-medium text-zinc-400">
-                                                    <li className="hover:text-white cursor-pointer transition-colors">United Kingdom</li>
-                                                    <li className="hover:text-white cursor-pointer transition-colors">Canada</li>
-                                                    <li className="hover:text-white cursor-pointer transition-colors">Australia</li>
-                                                    <li className="hover:text-white cursor-pointer transition-colors">Show All</li>
-                                                </ul>
+                                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6 w-[400px] md:w-[700px] lg:w-[900px]">
+                                                {/* Column 1: Scholarships */}
+                                                <div className="space-y-4">
+                                                    <h4 className="font-medium text-xs text-zinc-500 px-3 uppercase tracking-wider flex items-center gap-2">
+                                                        <GraduationCap className="w-4 h-4" /> Scholarships
+                                                    </h4>
+                                                    <ul className="grid gap-1">
+                                                        <ListItem href="/scholarships?type=masters" title="Masters Programs">
+                                                            Fully funded degrees for postgraduate studies.
+                                                        </ListItem>
+                                                        <ListItem href="/scholarships?type=phd" title="PhD & Research">
+                                                            Research grants and doctoral positions.
+                                                        </ListItem>
+                                                        <ListItem href="/scholarships?type=undergrad" title="Undergraduate">
+                                                            Merit-based waivers and financial aid.
+                                                        </ListItem>
+                                                        <ListItem href="/scholarships?type=government" title="Government Schemes">
+                                                            Chevening, Fulbright, and DAAD.
+                                                        </ListItem>
+                                                    </ul>
+                                                </div>
+
+                                                {/* Column 2: Jobs & Careers */}
+                                                <div className="space-y-4">
+                                                    <h4 className="font-medium text-xs text-zinc-500 px-3 uppercase tracking-wider flex items-center gap-2">
+                                                        <Briefcase className="w-4 h-4" /> Jobs & Careers
+                                                    </h4>
+                                                    <ul className="grid gap-1">
+                                                        <ListItem href="/jobs" title="Visa Sponsored Jobs">
+                                                            Direct hire roles with relocation support.
+                                                        </ListItem>
+                                                        <ListItem href="/jobs?type=tech" title="Tech Relocation">
+                                                            Software engineering and product roles.
+                                                        </ListItem>
+                                                        <ListItem href="/jobs?type=healthcare" title="Healthcare">
+                                                            Nursing and medical professional pathways.
+                                                        </ListItem>
+                                                        <ListItem href="/jobs?type=remote" title="Remote Work">
+                                                            Global remote roles available to Africans.
+                                                        </ListItem>
+                                                    </ul>
+                                                </div>
+
+                                                {/* Column 3: Immigration & Fellowships */}
+                                                <div className="space-y-4">
+                                                    <h4 className="font-medium text-xs text-zinc-500 px-3 uppercase tracking-wider flex items-center gap-2">
+                                                        <Globe className="w-4 h-4" /> Global Pathways
+                                                    </h4>
+                                                    <ul className="grid gap-1">
+                                                        <ListItem href="/immigration" title="Skilled Worker Visas">
+                                                            Points-based systems for UK, Canada, & EU.
+                                                        </ListItem>
+                                                        <ListItem href="/immigration?type=talent" title="Global Talent">
+                                                            For exceptional leaders in tech and arts.
+                                                        </ListItem>
+                                                        <ListItem href="/startups" title="Startup Visas">
+                                                            Founder pathways for innovative businesses.
+                                                        </ListItem>
+                                                        <ListItem href="/fellowships" title="Fellowships">
+                                                            Leadership programs and social impact grants.
+                                                        </ListItem>
+                                                    </ul>
+                                                </div>
                                             </div>
                                         </NavigationMenuContent>
                                     </NavigationMenuItem>
 
                                     <NavigationMenuItem>
-                                        <NavigationMenuTrigger className="text-zinc-300 hover:text-white bg-transparent">Jobs & Visas</NavigationMenuTrigger>
-                                        <NavigationMenuContent>
-                                            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                                                {jobs.map((component) => (
-                                                    <ListItem
-                                                        key={component.title}
-                                                        title={component.title}
-                                                        href={component.href}
-                                                    >
-                                                        {component.description}
-                                                    </ListItem>
-                                                ))}
-                                            </ul>
-                                        </NavigationMenuContent>
-                                    </NavigationMenuItem>
-
-                                    <NavigationMenuItem>
-                                        <Link href="/fellowships" legacyBehavior passHref>
-                                            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent text-zinc-300 hover:text-white")}>
-                                                Fellowships
+                                        <Link href="/community" legacyBehavior passHref>
+                                            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent text-zinc-300 hover:text-primary font-medium")}>
+                                                Community
                                             </NavigationMenuLink>
                                         </Link>
                                     </NavigationMenuItem>
@@ -103,13 +118,9 @@ export function Header() {
 
                     <div className="flex items-center gap-3">
                         <Link href="/post" className="hidden sm:block">
-                            <span className="text-sm font-medium text-zinc-400 hover:text-white transition-colors">Post Opportunity</span>
+                            <span className="text-sm font-medium text-zinc-400 hover:text-primary transition-colors">Post Opportunities</span>
                         </Link>
-                        <Link href="/email">
-                            <Button size="sm" className="rounded-2xl px-5 font-semibold bg-white text-black hover:bg-zinc-200">
-                                Get Alerts
-                            </Button>
-                        </Link>
+                        <GetAlertsButton />
                     </div>
                 </div>
             </header>
@@ -117,48 +128,23 @@ export function Header() {
     );
 }
 
-const jobs: { title: string; href: string; description: string }[] = [
-    {
-        title: "Visa Sponsored Jobs",
-        href: "/jobs",
-        description:
-            "Direct hire roles with relocation packages included.",
-    },
-    {
-        title: "Skilled Worker Visas",
-        href: "/immigration",
-        description:
-            "Pathways for healthcare, tech, and engineering professionals.",
-    },
-    {
-        title: "Startup Visas",
-        href: "/startups",
-        description:
-            "Founders pathways for UK, Canada, and France.",
-    },
-    {
-        title: "Remote Work",
-        href: "/jobs?type=remote",
-        description: "Global roles available to African talent.",
-    },
-]
-
-const ListItem = ({ className, title, children, ...props }: any) => {
+const ListItem = ({ className, title, children, href, ...props }: any) => {
     return (
         <li>
             <NavigationMenuLink asChild>
-                <a
+                <Link
+                    href={href}
                     className={cn(
-                        "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-zinc-800 hover:text-zinc-100 focus:bg-zinc-800 focus:text-zinc-100",
+                        "block select-none space-y-1 rounded-none p-3 leading-none no-underline outline-none transition-colors hover:bg-zinc-800/50 hover:text-accent-foreground focus:bg-zinc-800/50 focus:text-accent-foreground group",
                         className
                     )}
                     {...props}
                 >
-                    <div className="text-sm font-medium leading-none text-white">{title}</div>
-                    <p className="line-clamp-2 text-sm leading-snug text-zinc-400">
+                    <div className="text-sm font-medium leading-none text-zinc-200 group-hover:text-primary transition-colors mb-1.5">{title}</div>
+                    <p className="line-clamp-2 text-xs leading-snug text-muted-foreground group-hover:text-zinc-400 transition-colors">
                         {children}
                     </p>
-                </a>
+                </Link>
             </NavigationMenuLink>
         </li>
     )

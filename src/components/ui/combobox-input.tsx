@@ -101,13 +101,13 @@ export function ComboboxInput({
                 autoComplete="off"
             />
             {isOpen && filteredOptions.length > 0 && (
-                <div className="absolute top-full left-0 right-0 z-50 mt-1 max-h-60 overflow-y-auto rounded-2xl border border-zinc-900 bg-black p-2 shadow-2xl animate-in fade-in-0 zoom-in-95">
+                <div className="absolute top-full left-0 right-0 z-50 mt-1 max-h-60 overflow-y-auto rounded-none border border-zinc-900 bg-black p-2 shadow-2xl animate-in fade-in-0 zoom-in-95">
                     {filteredOptions.map((option) => (
                         <div
                             key={option}
                             className={cn(
-                                "relative flex cursor-pointer select-none items-center rounded-lg px-3 py-2 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50 text-zinc-300",
-                                inputValue === option ? "bg-zinc-900 text-white" : "hover:bg-zinc-900 hover:text-white"
+                                "relative flex cursor-pointer select-none items-center rounded-none px-3 py-2 text-sm outline-none transition-colors data-[disabled]:pointer-events-none data-[disabled]:opacity-50 text-zinc-300",
+                                inputValue === option ? "bg-zinc-900 text-primary" : "hover:bg-zinc-900 hover:text-primary"
                             )}
                             onClick={() => handleSelectOption(option)}
                         >

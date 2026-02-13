@@ -137,7 +137,7 @@ END:VCALENDAR`;
 
     return (
         <Dialog>
-            <div className={`group flex ${compact ? 'flex-col h-full' : 'flex-col md:flex-row'} gap-0 rounded-2xl border border-zinc-900 bg-black hover:border-zinc-800 shadow-xl transition-all duration-200 overflow-hidden relative`}>
+            <div className={`group flex ${compact ? 'flex-col h-full' : 'flex-col md:flex-row'} gap-0 rounded-none border-2 border-zinc-800 bg-zinc-950 shadow-[4px_4px_0px_0px_#27272a] hover:border-primary hover:shadow-[4px_4px_0px_0px_var(--primary)] transition-all duration-200 overflow-hidden relative`}>
                 {/* Full Card Click Trigger */}
                 <DialogTrigger className="absolute inset-0 z-10 w-full h-full cursor-pointer focus:outline-none" />
 
@@ -188,25 +188,25 @@ END:VCALENDAR`;
                 {/* Footer: Tags & Action */}
                 <div className={`flex flex-wrap items-center gap-3 mt-6 pt-5 border-t border-zinc-900 ${compact ? 'text-xs' : ''}`}>
                     <div className="flex items-center gap-2 flex-1 flex-wrap">
-                        <span className="inline-flex items-center px-3 py-1 rounded-md text-[11px] font-medium bg-zinc-900 border border-zinc-800 text-zinc-300 shadow-sm">
+                        <span className="inline-flex items-center px-3 py-1 rounded-none text-xs font-medium bg-zinc-900 border border-zinc-800 text-zinc-300 shadow-sm">
                             {opportunity.category}
                         </span>
                         
                         {!compact && opportunity.funding_type && (
-                            <span className="inline-flex items-center px-3 py-1 rounded-md text-[11px] font-medium bg-zinc-900 border border-zinc-800 text-zinc-300 shadow-sm">
+                            <span className="inline-flex items-center px-3 py-1 rounded-none text-xs font-medium bg-zinc-900 border border-zinc-800 text-zinc-300 shadow-sm">
                                 {opportunity.funding_type}
                             </span>
                         )}
                         
                         {/* Visa Badge */}
                         {opportunity.visa_sponsorship && (
-                            <div className="inline-flex items-center px-3 py-1 rounded-md border border-zinc-800 bg-zinc-900 text-[11px] font-medium text-zinc-100 shadow-sm">
+                            <div className="inline-flex items-center px-3 py-1 rounded-none border border-zinc-800 bg-zinc-900 text-xs font-medium text-zinc-100 shadow-sm">
                                 {compact ? 'Visa' : visaText}
                             </div>
                         )}
                     </div>
 
-                    <Button asChild className={`relative z-20 font-semibold rounded-md bg-white text-black hover:bg-zinc-200 shadow-md transition-all hover:scale-105 active:scale-95 cursor-pointer flex items-center justify-center ml-auto ${compact ? 'h-8 px-4 text-[10px]' : 'h-10 px-6 text-sm'}`}>
+                    <Button asChild className={`relative z-20 font-semibold rounded-none bg-primary text-primary-foreground hover:bg-primary/90 shadow-md transition-all hover:scale-105 active:scale-95 cursor-pointer flex items-center justify-center ml-auto ${compact ? 'h-8 px-4 text-xs' : 'h-10 px-6 text-sm'}`}>
                         <Link href={opportunity.application_url || "#"} target="_blank" onClick={(e) => e.stopPropagation()}>
                             Apply
                         </Link>
@@ -215,7 +215,7 @@ END:VCALENDAR`;
             </div>
         </div>
 
-            <DialogContent className="max-w-3xl bg-zinc-950 border-zinc-800 text-zinc-100 p-0 overflow-hidden gap-0">
+            <DialogContent className="max-w-3xl bg-zinc-950 border-2 border-zinc-800 shadow-[8px_8px_0px_0px_#27272a] text-zinc-100 p-0 overflow-hidden gap-0 rounded-none">
                 <div ref={contentRef} className="flex flex-col w-full bg-zinc-950">
                 {/* Header Image */}
                 <div className="relative h-64 w-full bg-zinc-900">
@@ -229,11 +229,11 @@ END:VCALENDAR`;
                     
                     <div className="absolute bottom-6 left-6 right-6">
                         <div className="flex flex-wrap items-center gap-3 mb-3">
-                            <Badge variant="secondary" className="bg-white/10 text-white hover:bg-white/20 border-white/10 backdrop-blur-md">
+                            <Badge variant="secondary" className="bg-primary/10 text-primary hover:bg-primary/20 border-primary/20 rounded-none border-2">
                                 {opportunity.category}
                             </Badge>
                             {opportunity.visa_sponsorship && (
-                                <Badge variant="outline" className="text-green-400 border-green-400/30 bg-green-400/10 backdrop-blur-md">
+                                <Badge variant="outline" className="text-primary border-primary/50 bg-primary/10 rounded-none border-2">
                                     Visa Sponsorship Available
                                 </Badge>
                             )}
@@ -306,39 +306,39 @@ END:VCALENDAR`;
                 </div>
 
                 {/* Footer Actions */}
-                <div className="p-6 border-t border-zinc-900 bg-zinc-950/50 flex flex-wrap justify-end gap-4">
+                <div className="p-6 border-t-2 border-zinc-800 bg-zinc-950 flex flex-wrap justify-end gap-4">
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                            <Button variant="outline" className="gap-2 border-zinc-800 text-zinc-300 hover:bg-zinc-900 hover:text-white rounded-md">
+                            <Button variant="outline" className="gap-2 border-2 border-zinc-800 text-zinc-300 hover:bg-zinc-900 hover:text-white rounded-none shadow-[4px_4px_0px_0px_#27272a] hover:shadow-[2px_2px_0px_0px_#27272a] hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
                                 <CalendarPlus className="h-4 w-4" />
                                 Add to Calendar
                                 <ChevronDown className="h-3 w-3 opacity-50" />
                             </Button>
                         </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end" className="w-48 bg-zinc-950 border-zinc-800 text-zinc-300 rounded-md">
+                        <DropdownMenuContent align="end" className="w-48 bg-zinc-950 border-zinc-800 text-zinc-300 rounded-none">
                             <DropdownMenuItem asChild>
-                                <Link href={calendarUrls.google} target="_blank" className="cursor-pointer hover:bg-zinc-900 focus:bg-zinc-900 focus:text-white rounded-sm">
+                                <Link href={calendarUrls.google} target="_blank" className="cursor-pointer hover:bg-zinc-900 focus:bg-zinc-900 focus:text-white rounded-none">
                                     Google Calendar
                                 </Link>
                             </DropdownMenuItem>
                             <DropdownMenuItem asChild>
-                                <Link href={calendarUrls.outlook} target="_blank" className="cursor-pointer hover:bg-zinc-900 focus:bg-zinc-900 focus:text-white rounded-sm">
+                                <Link href={calendarUrls.outlook} target="_blank" className="cursor-pointer hover:bg-zinc-900 focus:bg-zinc-900 focus:text-white rounded-none">
                                     Outlook Calendar
                                 </Link>
                             </DropdownMenuItem>
                             <DropdownMenuItem asChild>
-                                <a href={calendarUrls.ics} download="opportunity.ics" className="cursor-pointer hover:bg-zinc-900 focus:bg-zinc-900 focus:text-white rounded-sm flex w-full items-center">
+                                <a href={calendarUrls.ics} download="opportunity.ics" className="cursor-pointer hover:bg-zinc-900 focus:bg-zinc-900 focus:text-white rounded-none flex w-full items-center">
                                     Download ICS
                                 </a>
                             </DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>
 
-                    <Button variant="outline" onClick={handleDownload} className="gap-2 border-zinc-800 text-zinc-300 hover:bg-zinc-900 hover:text-white rounded-md">
+                    <Button variant="outline" onClick={handleDownload} className="gap-2 border-zinc-800 text-zinc-300 hover:bg-zinc-900 hover:text-white rounded-none">
                         <Download className="h-4 w-4" />
                         Download
                     </Button>
-                    <Button asChild className="bg-white text-black hover:bg-zinc-200 rounded-md">
+                    <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-none">
                         <Link href={opportunity.application_url || "#"} target="_blank">
                             Apply Now <ArrowRightIcon className="ml-2 h-4 w-4" />
                         </Link>
