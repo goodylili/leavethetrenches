@@ -114,7 +114,7 @@ const MOCK_OPPORTUNITIES = [
     application_url: "#",
     description: "Design payment experiences for millions of users.",
     posted_date: "2025-10-22",
-    image_url: "https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?w=800&auto=format&fit=crop&q=60"
+    image_url: "https://images.unsplash.com/photo-1556740758-90de374c12ad?w=800&auto=format&fit=crop&q=60"
   },
   {
     id: "10",
@@ -142,7 +142,7 @@ const MOCK_OPPORTUNITIES = [
     application_url: "#",
     description: "Analyze data to help merchants succeed.",
     posted_date: "2025-10-18",
-    image_url: "https://images.unsplash.com/photo-1517999349834-29e8c4542911?w=800&auto=format&fit=crop&q=60"
+    image_url: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=60"
   },
 
   // Immigration
@@ -159,7 +159,7 @@ const MOCK_OPPORTUNITIES = [
     application_url: "https://technation.io/visa/",
     description: "Endorsement for exceptional talent in digital technology. No job offer needed initially.",
     posted_date: "2025-01-01",
-    image_url: "https://images.unsplash.com/photo-1526304640152-d4619684e484?w=800&auto=format&fit=crop&q=60"
+    image_url: "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?w=800&auto=format&fit=crop&q=60"
   },
   {
     id: "5",
@@ -188,7 +188,7 @@ const MOCK_OPPORTUNITIES = [
     application_url: "#",
     description: "Points-based system to look for work in Germany for up to a year.",
     posted_date: "2025-06-01",
-    image_url: "https://images.unsplash.com/photo-1467269204594-9661b133dd2b?w=800&auto=format&fit=crop&q=60"
+    image_url: "https://images.unsplash.com/photo-1560969184-10fe8719e047?w=800&auto=format&fit=crop&q=60"
   },
 
   // Fellowships
@@ -263,7 +263,7 @@ const MOCK_OPPORTUNITIES = [
     description: "For exceptional talent and promise in digital technology.",
     hot: true,
     posted_date: "2025-09-01",
-    image_url: "https://images.unsplash.com/photo-1526304640152-d4619684e484?w=800&auto=format&fit=crop&q=60"
+    image_url: "https://images.unsplash.com/photo-1529655683826-aba9b3e77383?w=800&auto=format&fit=crop&q=60"
   },
   {
     id: "17",
@@ -278,7 +278,7 @@ const MOCK_OPPORTUNITIES = [
     description: "Master's degree and leadership program in Beijing.",
     hot: true,
     posted_date: "2025-08-30",
-    image_url: "https://images.unsplash.com/photo-1599582424435-282a3bb49948?w=800&auto=format&fit=crop&q=60"
+    image_url: "https://images.unsplash.com/photo-1547981609-4b6bfe67ca0b?w=800&auto=format&fit=crop&q=60"
   },
   {
     id: "18",
@@ -293,7 +293,7 @@ const MOCK_OPPORTUNITIES = [
     description: "Two-year program for young people who want to build new things.",
     hot: true,
     posted_date: "2025-09-15",
-    image_url: "https://images.unsplash.com/photo-1559136555-9303dff5a98b?w=800&auto=format&fit=crop&q=60"
+    image_url: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&auto=format&fit=crop&q=60"
   },
   {
     id: "19",
