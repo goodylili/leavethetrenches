@@ -1,10 +1,11 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRightIcon, Calendar, Globe, Building2, Wallet, CalendarPlus, ChevronDown, Download } from "lucide-react";
+import { ArrowRightIcon, Calendar, Globe, Building2, Wallet, CalendarPlus, ChevronDown, ChevronUp, Download } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import { useRef, useCallback } from "react";
+import { useRef, useCallback, useState } from "react";
 import { toPng } from "html-to-image";
+import ReactMarkdown from 'react-markdown';
 import {
     Dialog,
     DialogContent,
@@ -116,6 +117,7 @@ END:VCALENDAR`;
     })();
 
     const contentRef = useRef<HTMLDivElement>(null);
+    const [isDescriptionOpen, setIsDescriptionOpen] = useState(true);
 
     const handleDownload = useCallback(async () => {
         if (contentRef.current === null) {
@@ -284,12 +286,22 @@ END:VCALENDAR`;
 
                     {/* Description */}
                     <div className="space-y-4">
-                        <h3 className="text-xl font-semibold text-zinc-100">About this opportunity</h3>
-                        <div className="prose prose-invert prose-zinc max-w-none">
-                            <p className="text-zinc-400 leading-relaxed whitespace-pre-line">
-                                {opportunity.description || `An exciting opportunity at ${opportunity.organization} in ${opportunity.country}. This program offers unique experiences and growth potential for qualified candidates.`}
-                            </p>
+                        <div 
+                            className="flex items-center justify-between cursor-pointer group/accordion select-none" 
+                            onClick={() => setIsDescriptionOpen(!isDescriptionOpen)}
+                        >
+                            <h3 className="text-xl font-semibold text-zinc-100">About this opportunity</h3>
+                            {isDescriptionOpen ? (
+                                <ChevronUp className="h-5 w-5 text-zinc-500 group-hover/accordion:text-zinc-300 transition-colors" />
+                            ) : (
+                                <ChevronDown className="h-5 w-5 text-zinc-500 group-hover/accordion:text-zinc-300 transition-colors" />
+                            )}
                         </div>
+                        {isDescriptionOpen && (
+                            <div className="prose prose-invert prose-zinc max-w-none text-zinc-400 leading-relaxed animate-in slide-in-from-top-2 fade-in duration-200">
+                                <ReactMarkdown>{opportunity.description || ""}</ReactMarkdown>
+                            </div>
+                        )}
                     </div>
                 </div>
 
