@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRightIcon, Calendar, Globe, Building2, Wallet, CalendarPlus, ChevronDown, ChevronUp, Download, Share2 } from "lucide-react";
+import { ArrowRightIcon, Calendar, CalendarClock, Globe, Building2, Wallet, CalendarPlus, ChevronDown, ChevronUp, Download, Share2, Twitter, Linkedin, MessageCircle, Copy } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRef, useCallback, useState } from "react";
@@ -235,18 +235,21 @@ END:VCALENDAR`;
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent align="end" className="w-44 bg-zinc-950 border-zinc-800 text-zinc-300 rounded-none z-50">
                                     <DropdownMenuItem asChild>
-                                        <Link href={calendarUrls.google} target="_blank" className="cursor-pointer hover:bg-zinc-900 rounded-none" onClick={(e) => e.stopPropagation()}>
-                                            Google Calendar
+                                        <Link href={calendarUrls.google} target="_blank" className="cursor-pointer hover:bg-zinc-900 rounded-none flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
+                                            <Calendar className="h-4 w-4" />
+                                            <span>Google Calendar</span>
                                         </Link>
                                     </DropdownMenuItem>
                                     <DropdownMenuItem asChild>
-                                        <Link href={calendarUrls.outlook} target="_blank" className="cursor-pointer hover:bg-zinc-900 rounded-none" onClick={(e) => e.stopPropagation()}>
-                                            Outlook Calendar
+                                        <Link href={calendarUrls.outlook} target="_blank" className="cursor-pointer hover:bg-zinc-900 rounded-none flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
+                                            <CalendarClock className="h-4 w-4" />
+                                            <span>Outlook Calendar</span>
                                         </Link>
                                     </DropdownMenuItem>
                                     <DropdownMenuItem asChild>
-                                        <a href={calendarUrls.ics} download={`${opportunity.title.replace(/\s+/g, '-').toLowerCase()}.ics`} className="cursor-pointer hover:bg-zinc-900 rounded-none" onClick={(e) => e.stopPropagation()}>
-                                            Download ICS
+                                        <a href={calendarUrls.ics} download={`${opportunity.title.replace(/\s+/g, '-').toLowerCase()}.ics`} className="cursor-pointer hover:bg-zinc-900 rounded-none flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
+                                            <Download className="h-4 w-4" />
+                                            <span>Download ICS</span>
                                         </a>
                                     </DropdownMenuItem>
                                 </DropdownMenuContent>
@@ -267,18 +270,21 @@ END:VCALENDAR`;
                                 </DropdownMenuTrigger>
                                 <DropdownMenuContent align="end" className="w-48 bg-zinc-950 border-zinc-800 text-zinc-300 rounded-none z-50">
                                     <DropdownMenuItem asChild>
-                                        <a href={shareLinks.whatsapp} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none" onClick={(e) => e.stopPropagation()}>
-                                            WhatsApp
+                                        <a href={shareLinks.whatsapp} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
+                                            <MessageCircle className="h-4 w-4" />
+                                            <span>WhatsApp</span>
                                         </a>
                                     </DropdownMenuItem>
                                     <DropdownMenuItem asChild>
-                                        <a href={shareLinks.twitter} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none" onClick={(e) => e.stopPropagation()}>
-                                            X / Twitter
+                                        <a href={shareLinks.twitter} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
+                                            <Twitter className="h-4 w-4" />
+                                            <span>X / Twitter</span>
                                         </a>
                                     </DropdownMenuItem>
                                     <DropdownMenuItem asChild>
-                                        <a href={shareLinks.linkedin} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none" onClick={(e) => e.stopPropagation()}>
-                                            LinkedIn
+                                        <a href={shareLinks.linkedin} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
+                                            <Linkedin className="h-4 w-4" />
+                                            <span>LinkedIn</span>
                                         </a>
                                     </DropdownMenuItem>
                                     <DropdownMenuItem 
@@ -295,7 +301,10 @@ END:VCALENDAR`;
                                         }}
                                         className="cursor-pointer hover:bg-zinc-900 rounded-none"
                                     >
-                                        {copied ? "Copied" : "Copy Link"}
+                                        <div className="flex items-center gap-2">
+                                            <Copy className="h-4 w-4" />
+                                            <span>{copied ? "Copied" : "Copy Link"}</span>
+                                        </div>
                                     </DropdownMenuItem>
                                 </DropdownMenuContent>
                             </DropdownMenu>
@@ -413,18 +422,21 @@ END:VCALENDAR`;
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end" className="w-48 bg-zinc-950 border-zinc-800 text-zinc-300 rounded-none">
                             <DropdownMenuItem asChild>
-                                <a href={shareLinks.whatsapp} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none">
-                                    WhatsApp
+                                <a href={shareLinks.whatsapp} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none flex items-center gap-2">
+                                    <MessageCircle className="h-4 w-4" />
+                                    <span>WhatsApp</span>
                                 </a>
                             </DropdownMenuItem>
                             <DropdownMenuItem asChild>
-                                <a href={shareLinks.twitter} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none">
-                                    X / Twitter
+                                <a href={shareLinks.twitter} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none flex items-center gap-2">
+                                    <Twitter className="h-4 w-4" />
+                                    <span>X / Twitter</span>
                                 </a>
                             </DropdownMenuItem>
                             <DropdownMenuItem asChild>
-                                <a href={shareLinks.linkedin} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none">
-                                    LinkedIn
+                                <a href={shareLinks.linkedin} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none flex items-center gap-2">
+                                    <Linkedin className="h-4 w-4" />
+                                    <span>LinkedIn</span>
                                 </a>
                             </DropdownMenuItem>
                             <DropdownMenuItem 
@@ -437,7 +449,10 @@ END:VCALENDAR`;
                                 }}
                                 className="cursor-pointer hover:bg-zinc-900 rounded-none"
                             >
-                                Copy Link
+                                <div className="flex items-center gap-2">
+                                    <Copy className="h-4 w-4" />
+                                    <span>Copy Link</span>
+                                </div>
                             </DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>
@@ -451,18 +466,21 @@ END:VCALENDAR`;
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end" className="w-48 bg-zinc-950 border-zinc-800 text-zinc-300 rounded-none">
                             <DropdownMenuItem asChild>
-                                <Link href={calendarUrls.google} target="_blank" className="cursor-pointer hover:bg-zinc-900 focus:bg-zinc-900 focus:text-white rounded-none">
-                                    Google Calendar
+                                <Link href={calendarUrls.google} target="_blank" className="cursor-pointer hover:bg-zinc-900 focus:bg-zinc-900 focus:text-white rounded-none flex items-center gap-2">
+                                    <Calendar className="h-4 w-4" />
+                                    <span>Google Calendar</span>
                                 </Link>
                             </DropdownMenuItem>
                             <DropdownMenuItem asChild>
-                                <Link href={calendarUrls.outlook} target="_blank" className="cursor-pointer hover:bg-zinc-900 focus:bg-zinc-900 focus:text-white rounded-none">
-                                    Outlook Calendar
+                                <Link href={calendarUrls.outlook} target="_blank" className="cursor-pointer hover:bg-zinc-900 focus:bg-zinc-900 focus:text-white rounded-none flex items-center gap-2">
+                                    <CalendarClock className="h-4 w-4" />
+                                    <span>Outlook Calendar</span>
                                 </Link>
                             </DropdownMenuItem>
                             <DropdownMenuItem asChild>
-                                <a href={calendarUrls.ics} download="opportunity.ics" className="cursor-pointer hover:bg-zinc-900 focus:bg-zinc-900 focus:text-white rounded-none flex w-full items-center">
-                                    Download ICS
+                                <a href={calendarUrls.ics} download="opportunity.ics" className="cursor-pointer hover:bg-zinc-900 focus:bg-zinc-900 focus:text-white rounded-none flex w-full items-center gap-2">
+                                    <Download className="h-4 w-4" />
+                                    <span>Download ICS</span>
                                 </a>
                             </DropdownMenuItem>
                         </DropdownMenuContent>
