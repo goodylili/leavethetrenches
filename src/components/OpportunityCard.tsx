@@ -160,7 +160,7 @@ END:VCALENDAR`;
                 </div>
 
                 {/* Content Section */}
-                <div className={`flex-1 flex flex-col ${compact ? 'p-4' : 'p-5 md:p-6'}`}>
+                <div className={`flex-1 flex flex-col ${compact ? 'p-4' : 'p-4 md:p-6'}`}>
                     
                     {/* Top Row: Category & Org */}
                     <div className="flex justify-between items-start mb-2">
@@ -181,13 +181,13 @@ END:VCALENDAR`;
                     </div>
 
                     {/* Organization */}
-                    <div className="flex items-center gap-2 text-sm font-medium text-zinc-400 mb-4">
+                    <div className="flex items-center gap-2 text-sm md:text-base font-medium text-zinc-400 mb-3 md:mb-4">
                         <Building2 className="w-4 h-4" />
                         <span>{opportunity.organization}</span>
                     </div>
 
                     {/* Metadata Row */}
-                    <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-zinc-400 mb-4">
+                    <div className="flex flex-wrap gap-x-4 md:gap-x-6 gap-y-2 text-sm text-zinc-400 mb-4">
                         <div className="flex items-center gap-2">
                             <span className="text-lg leading-none">{flag}</span>
                             <span>{opportunity.country}</span>
@@ -205,28 +205,28 @@ END:VCALENDAR`;
                     </div>
 
                     {/* Footer Actions */}
-                    <div className="mt-auto pt-4 border-t-2 border-zinc-900 flex items-center justify-between gap-4 relative z-20">
-                        <div className="flex items-center gap-2">
-                            <span className="inline-flex items-center gap-1 px-2 py-1 text-[11px] font-bold rounded-none bg-zinc-900 border border-zinc-800 text-zinc-200">
+                    <div className="mt-auto pt-4 border-t-2 border-zinc-900 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 relative z-20">
+                        <div className="flex items-center gap-2 flex-wrap">
+                            <span className="inline-flex items-center gap-1 px-2 py-1 text-[10px] md:text-[11px] font-bold rounded-none bg-zinc-900 border border-zinc-800 text-zinc-200">
                                 {tag1}
                             </span>
-                            <span className="inline-flex items-center gap-1 px-2 py-1 text-[11px] font-bold rounded-none bg-zinc-900 border border-zinc-800 text-zinc-200">
+                            <span className="inline-flex items-center gap-1 px-2 py-1 text-[10px] md:text-[11px] font-bold rounded-none bg-zinc-900 border border-zinc-800 text-zinc-200">
                                 {tag2}
                             </span>
-                            <span className="inline-flex items-center gap-1 px-2 py-1 text-[11px] font-bold rounded-none bg-zinc-900 border border-zinc-800 text-zinc-200">
+                            <span className="inline-flex items-center gap-1 px-2 py-1 text-[10px] md:text-[11px] font-bold rounded-none bg-zinc-900 border border-zinc-800 text-zinc-200">
                                 {tag3}
                             </span>
                         </div>
 
                         {/* Actions: Add to Calendar, Share, Apply */}
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 w-full sm:w-auto">
                             {/* Add to Calendar Dropdown */}
                             <DropdownMenu>
                                 <DropdownMenuTrigger asChild>
                                     <Button
                                         variant="outline"
                                         size="icon"
-                                        className="rounded-none border-2 border-zinc-800 bg-zinc-950 text-zinc-300 hover:bg-zinc-900 hover:text-white relative z-20"
+                                        className="rounded-none border-2 border-zinc-800 bg-zinc-950 text-zinc-300 hover:bg-zinc-900 hover:text-white relative z-20 h-9 w-9 md:h-10 md:w-10"
                                         onClick={(e) => e.stopPropagation()}
                                         aria-label="Add to Calendar"
                                     >
@@ -261,7 +261,7 @@ END:VCALENDAR`;
                                     <Button
                                         variant="outline"
                                         size="icon"
-                                        className="rounded-none border-2 border-zinc-800 bg-zinc-950 text-zinc-300 hover:bg-zinc-900 hover:text-white relative z-20"
+                                        className="rounded-none border-2 border-zinc-800 bg-zinc-950 text-zinc-300 hover:bg-zinc-900 hover:text-white relative z-20 h-9 w-9 md:h-10 md:w-10"
                                         onClick={(e) => e.stopPropagation()}
                                         aria-label="Share"
                                     >
@@ -312,8 +312,7 @@ END:VCALENDAR`;
                             {/* Apply Button styled */}
                             <Button 
                                 asChild 
-                                size={compact ? "sm" : "default"}
-                                className="rounded-none relative z-20"
+                                className="rounded-none relative z-20 h-10 md:h-11 px-4 md:px-6 w-full sm:w-auto"
                             >
                                 <Link href={opportunity.application_url || "#"} target="_blank" onClick={(e) => e.stopPropagation()}>
                                     Apply <ArrowRightIcon className="ml-2 h-4 w-4" />
@@ -410,11 +409,11 @@ END:VCALENDAR`;
                 </div>
 
                 {/* Footer Actions */}
-                <div className="p-6 border-t-2 border-zinc-800 bg-zinc-950 flex flex-wrap justify-end gap-4">
+                <div className="p-4 md:p-6 border-t-2 border-zinc-800 bg-zinc-950 flex flex-wrap justify-end gap-3 md:gap-4">
                     {/* Share in Modal */}
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                            <Button variant="outline" className="gap-2 border-2 border-zinc-800 text-zinc-300 hover:bg-zinc-900 hover:text-white rounded-none">
+                            <Button variant="outline" className="gap-2 border-2 border-zinc-800 text-zinc-300 hover:bg-zinc-900 hover:text-white rounded-none h-10 md:h-11 px-4 md:px-6">
                                 <Share2 className="h-4 w-4" />
                                 Share
                                 <ChevronDown className="h-3 w-3 opacity-50" />
@@ -458,7 +457,7 @@ END:VCALENDAR`;
                     </DropdownMenu>
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                            <Button variant="outline" className="gap-2 border-2 border-zinc-800 text-zinc-300 hover:bg-zinc-900 hover:text-white rounded-none shadow-[4px_4px_0px_0px_#27272a] hover:shadow-[2px_2px_0px_0px_#27272a] hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
+                            <Button variant="outline" className="gap-2 border-2 border-zinc-800 text-zinc-300 hover:bg-zinc-900 hover:text-white rounded-none shadow-[4px_4px_0px_0px_#27272a] hover:shadow-[2px_2px_0px_0px_#27272a] hover:translate-x-[2px] hover:translate-y-[2px] transition-all h-10 md:h-11 px-4 md:px-6">
                                 <CalendarPlus className="h-4 w-4" />
                                 Add to Calendar
                                 <ChevronDown className="h-3 w-3 opacity-50" />
@@ -486,11 +485,11 @@ END:VCALENDAR`;
                         </DropdownMenuContent>
                     </DropdownMenu>
 
-                    <Button variant="outline" onClick={handleDownload} className="gap-2 border-zinc-800 text-zinc-300 hover:bg-zinc-900 hover:text-white rounded-none">
+                    <Button variant="outline" onClick={handleDownload} className="gap-2 border-zinc-800 text-zinc-300 hover:bg-zinc-900 hover:text-white rounded-none h-10 md:h-11 px-4 md:px-6">
                         <Download className="h-4 w-4" />
                         Download
                     </Button>
-                    <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-none">
+                    <Button asChild className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-none h-10 md:h-11 px-4 md:px-6">
                         <Link href={opportunity.application_url || "#"} target="_blank">
                             Apply Now <ArrowRightIcon className="ml-2 h-4 w-4" />
                         </Link>
