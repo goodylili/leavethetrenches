@@ -64,12 +64,9 @@ const getCountryFlag = (country: string) => {
 export function OpportunityCard({ opportunity, userCountry, compact = false }: { opportunity: Opportunity; userCountry?: string; compact?: boolean }) {
     const flag = getCountryFlag(opportunity.country);
 
-    // Personalize Visa Badge
-    let visaText = "Visa Sponsorship";
-    if (userCountry && opportunity.visa_sponsorship) {
-        const userFlag = getCountryFlag(userCountry);
-        visaText = `Visa for ${userFlag} ${userCountry}`;
-    }
+    const tag1 = opportunity.category;
+    const tag2 = opportunity.sub_category ? opportunity.sub_category : opportunity.country;
+    const tag3 = opportunity.funding_type ? opportunity.funding_type : (opportunity.deadline === "Rolling" ? "Rolling" : `Due ${new Date(opportunity.deadline!).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}`);
 
     // Format date relative or short
     const dateText = opportunity.deadline === "Rolling"
@@ -118,6 +115,7 @@ END:VCALENDAR`;
 
     const contentRef = useRef<HTMLDivElement>(null);
     const [isDescriptionOpen, setIsDescriptionOpen] = useState(true);
+    const [copied, setCopied] = useState(false);
 
     const handleDownload = useCallback(async () => {
         if (contentRef.current === null) {
@@ -199,18 +197,17 @@ END:VCALENDAR`;
 
                     {/* Footer Actions */}
                     <div className="mt-auto pt-4 border-t-2 border-zinc-900 flex items-center justify-between gap-4">
-                        {/* Tags only when visa sponsored */}
-                        {opportunity.visa_sponsorship && (
-                            <div className="flex items-center gap-2">
-                                <span className="inline-flex items-center gap-1 px-2 py-1 text-[11px] font-bold rounded-none bg-zinc-900 border border-zinc-800 text-zinc-200">
-                                    {opportunity.category}
-                                </span>
-                                <span className="inline-flex items-center gap-1 px-2 py-1 text-[11px] font-bold rounded-none bg-zinc-900 border border-zinc-800 text-emerald-400">
-                                    <span className="text-base leading-none">{userCountry ? getCountryFlag(userCountry) : ''}</span>
-                                    Visa Eligible
-                                </span>
-                            </div>
-                        )}
+                        <div className="flex items-center gap-2">
+                            <span className="inline-flex items-center gap-1 px-2 py-1 text-[11px] font-bold rounded-none bg-zinc-900 border border-zinc-800 text-zinc-200">
+                                {tag1}
+                            </span>
+                            <span className="inline-flex items-center gap-1 px-2 py-1 text-[11px] font-bold rounded-none bg-zinc-900 border border-zinc-800 text-zinc-200">
+                                {tag2}
+                            </span>
+                            <span className="inline-flex items-center gap-1 px-2 py-1 text-[11px] font-bold rounded-none bg-zinc-900 border border-zinc-800 text-zinc-200">
+                                {tag3}
+                            </span>
+                        </div>
 
                         {/* Actions: Add to Calendar, Share, Apply */}
                         <div className="flex items-center gap-2">
@@ -260,15 +257,21 @@ END:VCALENDAR`;
                                     </Button>
                                 </DropdownMenuTrigger>
                                 {(() => {
-                                    const shareUrl = encodeURIComponent(opportunity.application_url || '');
+                                    const rawUrl = opportunity.application_url && opportunity.application_url !== "#" 
+                                        ? opportunity.application_url 
+                                        : (typeof window !== "undefined" ? window.location.href : "https://leavethetrenches.com");
+                                    const shareUrl = encodeURIComponent(rawUrl);
                                     const shareText = encodeURIComponent(`${opportunity.title} – ${opportunity.organization}`);
                                     const twitter = `https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}`;
                                     const linkedin = `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`;
-                                    const facebook = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
-                                    const whatsapp = `https://api.whatsapp.com/send?text=${shareText}%20${shareUrl}`;
-                                    const reddit = `https://www.reddit.com/submit?url=${shareUrl}&title=${shareText}`;
+                                    const whatsapp = `https://wa.me/?text=${shareText}%20${shareUrl}`;
                                     return (
                                         <DropdownMenuContent align="end" className="w-48 bg-zinc-950 border-zinc-800 text-zinc-300 rounded-none">
+                                            <DropdownMenuItem asChild>
+                                                <a href={whatsapp} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none" onClick={(e) => e.stopPropagation()}>
+                                                    WhatsApp
+                                                </a>
+                                            </DropdownMenuItem>
                                             <DropdownMenuItem asChild>
                                                 <a href={twitter} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none" onClick={(e) => e.stopPropagation()}>
                                                     X / Twitter
@@ -279,20 +282,21 @@ END:VCALENDAR`;
                                                     LinkedIn
                                                 </a>
                                             </DropdownMenuItem>
-                                            <DropdownMenuItem asChild>
-                                                <a href={facebook} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none" onClick={(e) => e.stopPropagation()}>
-                                                    Facebook
-                                                </a>
-                                            </DropdownMenuItem>
-                                            <DropdownMenuItem asChild>
-                                                <a href={whatsapp} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none" onClick={(e) => e.stopPropagation()}>
-                                                    WhatsApp
-                                                </a>
-                                            </DropdownMenuItem>
-                                            <DropdownMenuItem asChild>
-                                                <a href={reddit} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none" onClick={(e) => e.stopPropagation()}>
-                                                    Reddit
-                                                </a>
+                                            <DropdownMenuItem 
+                                                onSelect={(e) => {
+                                                    e.preventDefault();
+                                                    e.stopPropagation();
+                                                    const text = `${opportunity.title} – ${rawUrl}`;
+                                                    if (typeof navigator !== "undefined" && navigator.clipboard) {
+                                                        navigator.clipboard.writeText(text).then(() => {
+                                                            setCopied(true);
+                                                            setTimeout(() => setCopied(false), 1500);
+                                                        });
+                                                    }
+                                                }}
+                                                className="cursor-pointer hover:bg-zinc-900 rounded-none"
+                                            >
+                                                {copied ? "Copied" : "Copy Link"}
                                             </DropdownMenuItem>
                                         </DropdownMenuContent>
                                     );
@@ -332,11 +336,6 @@ END:VCALENDAR`;
                             <Badge variant="secondary" className="bg-primary/10 text-primary hover:bg-primary/20 border-primary/20 rounded-none border-2">
                                 {opportunity.category}
                             </Badge>
-                            {opportunity.visa_sponsorship && (
-                                <Badge variant="outline" className="text-primary border-primary/50 bg-primary/10 rounded-none border-2">
-                                    Visa Sponsorship Available
-                                </Badge>
-                            )}
                         </div>
                         <h2 className="text-3xl md:text-4xl font-bold text-white leading-tight">
                             {opportunity.title}
