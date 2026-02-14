@@ -137,83 +137,86 @@ END:VCALENDAR`;
 
     return (
         <Dialog>
-            <div className={`group flex ${compact ? 'flex-col h-full' : 'flex-col md:flex-row'} gap-0 rounded-none border-2 border-zinc-800 bg-zinc-950 shadow-[4px_4px_0px_0px_#27272a] hover:border-primary hover:shadow-[4px_4px_0px_0px_var(--primary)] transition-all duration-200 overflow-hidden relative`}>
+            <div className={`group flex ${compact ? 'flex-col h-full' : 'flex-col md:flex-row'} w-full bg-zinc-950 border-2 border-zinc-800 shadow-[4px_4px_0px_0px_#27272a] hover:border-primary hover:shadow-[6px_6px_0px_0px_var(--primary)] transition-all duration-200 overflow-hidden relative rounded-none`}>
                 {/* Full Card Click Trigger */}
                 <DialogTrigger className="absolute inset-0 z-10 w-full h-full cursor-pointer focus:outline-none" />
 
-                {/* Left/Top: Image Section */}
-            <div className={`relative w-full ${compact ? 'h-40' : 'md:w-64 h-48 md:h-auto'} flex-shrink-0 bg-zinc-950`}>
-                <Image
-                    src={opportunity.image_url || defaultImage}
-                    alt={opportunity.title}
-                    fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-black/10 group-hover:bg-transparent transition-colors duration-500" />
-            </div>
-
-            {/* Right/Bottom: Content Section */}
-            <div className={`flex-1 flex flex-col justify-between ${compact ? 'p-4' : 'p-6'}`}>
-                <div>
-                    <div className="flex justify-between items-start gap-2">
-                        <h3 className={`font-bold text-zinc-100 tracking-tight ${compact ? 'text-lg' : 'text-2xl'}`}>
-                            {opportunity.title}
-                        </h3>
-                    </div>
-                    
-                    <div className="flex items-center text-sm text-zinc-400 mt-2 gap-2 flex-wrap">
-                        <span className="font-medium text-zinc-300">{opportunity.organization}</span>
-                        {!compact && (
-                            <>
-                                <span className="text-zinc-700">•</span>
-                                <span>{flag} {opportunity.country}</span>
-                                <span className="text-zinc-700">•</span>
-                                <span>{dateText}</span>
-                            </>
-                        )}
-                        {compact && (
-                             <div className="flex items-center gap-2 w-full mt-1 text-xs">
-                                <span>{flag} {opportunity.country}</span>
-                                <span className="text-zinc-700">•</span>
-                                <span>{dateText}</span>
-                             </div>
-                        )}
-                    </div>
-
-                    <p className={`text-zinc-500 mt-4 leading-relaxed line-clamp-2 ${compact ? 'text-xs' : 'text-sm'}`}>
-                        {opportunity.description || `An exciting opportunity at ${opportunity.organization} in ${opportunity.country}.`}
-                    </p>
+                {/* Image Section */}
+                <div className={`relative ${compact ? 'w-full h-48' : 'w-full h-56 md:w-72 md:h-auto'} flex-shrink-0 bg-zinc-900 border-b-2 md:border-b-0 md:border-r-2 border-zinc-800 overflow-hidden`}>
+                    <Image
+                        src={opportunity.image_url || defaultImage}
+                        alt={opportunity.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105 opacity-90 group-hover:opacity-100"
+                    />
+                    <div className="absolute inset-0 bg-zinc-950/20 group-hover:bg-transparent transition-colors duration-500" />
                 </div>
 
-                {/* Footer: Tags & Action */}
-                <div className={`flex flex-wrap items-center gap-3 mt-6 pt-5 border-t border-zinc-900 ${compact ? 'text-xs' : ''}`}>
-                    <div className="flex items-center gap-2 flex-1 flex-wrap">
-                        <span className="inline-flex items-center px-3 py-1 rounded-none text-xs font-medium bg-zinc-900 border border-zinc-800 text-zinc-300 shadow-sm">
-                            {opportunity.category}
-                        </span>
-                        
-                        {!compact && opportunity.funding_type && (
-                            <span className="inline-flex items-center px-3 py-1 rounded-none text-xs font-medium bg-zinc-900 border border-zinc-800 text-zinc-300 shadow-sm">
-                                {opportunity.funding_type}
-                            </span>
-                        )}
-                        
-                        {/* Visa Badge */}
-                        {opportunity.visa_sponsorship && (
-                            <div className="inline-flex items-center px-3 py-1 rounded-none border border-zinc-800 bg-zinc-900 text-xs font-medium text-zinc-100 shadow-sm">
-                                {compact ? 'Visa' : visaText}
+                {/* Content Section */}
+                <div className={`flex-1 flex flex-col ${compact ? 'p-4' : 'p-5 md:p-6'}`}>
+                    
+                    {/* Top Row: Category & Org */}
+                    <div className="flex justify-between items-start mb-2">
+                        <div className="space-y-1">
+                             <div className="flex items-center gap-2 text-xs font-bold text-primary uppercase tracking-wider">
+                                <span>{opportunity.category}</span>
+                                {opportunity.sub_category && (
+                                    <>
+                                        <span className="text-zinc-600">•</span>
+                                        <span className="text-zinc-400">{opportunity.sub_category}</span>
+                                    </>
+                                )}
+                            </div>
+                            <h3 className={`font-bold text-zinc-100 leading-tight group-hover:text-primary transition-colors ${compact ? 'text-lg' : 'text-xl md:text-2xl'}`}>
+                                {opportunity.title}
+                            </h3>
+                        </div>
+                    </div>
+
+                    {/* Organization */}
+                    <div className="flex items-center gap-2 text-sm font-medium text-zinc-400 mb-4">
+                        <Building2 className="w-4 h-4" />
+                        <span>{opportunity.organization}</span>
+                    </div>
+
+                    {/* Metadata Row */}
+                    <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-zinc-400 mb-4">
+                        <div className="flex items-center gap-2">
+                            <span className="text-lg leading-none">{flag}</span>
+                            <span>{opportunity.country}</span>
+                        </div>
+                        <div className="flex items-center gap-2">
+                            <Calendar className="w-4 h-4 text-zinc-500" />
+                            <span>{dateText}</span>
+                        </div>
+                        {opportunity.funding_type && (
+                            <div className="flex items-center gap-2">
+                                <Wallet className="w-4 h-4 text-zinc-500" />
+                                <span className="text-zinc-300 font-semibold">{opportunity.funding_type}</span>
                             </div>
                         )}
                     </div>
 
-                    <Button asChild className={`relative z-20 font-semibold rounded-none bg-primary text-primary-foreground hover:bg-primary/90 shadow-md transition-all hover:scale-105 active:scale-95 cursor-pointer flex items-center justify-center ml-auto ${compact ? 'h-8 px-4 text-xs' : 'h-10 px-6 text-sm'}`}>
-                        <Link href={opportunity.application_url || "#"} target="_blank" onClick={(e) => e.stopPropagation()}>
-                            Apply
-                        </Link>
-                    </Button>
+                    {/* Footer Actions */}
+                    <div className="mt-auto pt-4 border-t-2 border-zinc-900 flex items-center justify-between gap-4">
+                         {opportunity.visa_sponsorship ? (
+                            <div className="flex items-center gap-1.5 text-xs font-bold text-emerald-400 uppercase tracking-wide">
+                                <Globe className="w-3.5 h-3.5" />
+                                <span>Visa Sponsored</span>
+                            </div>
+                        ) : (
+                            <div className="flex items-center gap-1.5 text-xs font-bold text-zinc-500 uppercase tracking-wide">
+                                <span>Check Eligibility</span>
+                            </div>
+                        )}
+
+                        <span className="text-sm font-bold text-zinc-100 group-hover:translate-x-1 transition-transform flex items-center gap-1">
+                            View <ArrowRightIcon className="w-4 h-4" />
+                        </span>
+                    </div>
                 </div>
             </div>
-        </div>
+
 
             <DialogContent className="max-w-3xl bg-zinc-950 border-2 border-zinc-800 shadow-[8px_8px_0px_0px_#27272a] text-zinc-100 p-0 overflow-hidden gap-0 rounded-none">
                 <div ref={contentRef} className="flex flex-col w-full bg-zinc-950">
