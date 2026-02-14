@@ -932,8 +932,8 @@ export default function Home() {
 
           <div className="container max-w-7xl mx-auto px-4 text-center relative z-10">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tighter text-foreground mb-6">
-              Escape velocity for <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-foreground to-foreground/50">African talent.</span>
+              Escape Velocity for <br className="hidden md:block" />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-foreground to-foreground/50">Your Promising Talents.</span>
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-10 leading-relaxed">
               The search engine for visa-sponsored jobs, fully funded scholarships, and global immigration pathways.

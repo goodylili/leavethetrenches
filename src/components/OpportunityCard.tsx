@@ -116,6 +116,15 @@ END:VCALENDAR`;
     const contentRef = useRef<HTMLDivElement>(null);
     const [isDescriptionOpen, setIsDescriptionOpen] = useState(true);
     const [copied, setCopied] = useState(false);
+    const appUrl = opportunity.application_url && opportunity.application_url !== "#" ? opportunity.application_url : "https://leavethetrenches.com";
+    const shareTitle = `${opportunity.title} – ${opportunity.organization}`;
+    const encShareUrl = encodeURIComponent(appUrl);
+    const encShareText = encodeURIComponent(shareTitle);
+    const shareLinks = {
+        whatsapp: `https://wa.me/?text=${encShareText}%20${encShareUrl}`,
+        twitter: `https://twitter.com/intent/tweet?text=${encShareText}&url=${encShareUrl}`,
+        linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encShareUrl}`,
+    };
 
     const handleDownload = useCallback(async () => {
         if (contentRef.current === null) {
@@ -196,7 +205,7 @@ END:VCALENDAR`;
                     </div>
 
                     {/* Footer Actions */}
-                    <div className="mt-auto pt-4 border-t-2 border-zinc-900 flex items-center justify-between gap-4">
+                    <div className="mt-auto pt-4 border-t-2 border-zinc-900 flex items-center justify-between gap-4 relative z-20">
                         <div className="flex items-center gap-2">
                             <span className="inline-flex items-center gap-1 px-2 py-1 text-[11px] font-bold rounded-none bg-zinc-900 border border-zinc-800 text-zinc-200">
                                 {tag1}
@@ -217,14 +226,14 @@ END:VCALENDAR`;
                                     <Button
                                         variant="outline"
                                         size="icon"
-                                        className="rounded-none border-2 border-zinc-800 bg-zinc-950 text-zinc-300 hover:bg-zinc-900 hover:text-white"
+                                        className="rounded-none border-2 border-zinc-800 bg-zinc-950 text-zinc-300 hover:bg-zinc-900 hover:text-white relative z-20"
                                         onClick={(e) => e.stopPropagation()}
                                         aria-label="Add to Calendar"
                                     >
                                         <CalendarPlus className="h-4 w-4" />
                                     </Button>
                                 </DropdownMenuTrigger>
-                                <DropdownMenuContent align="end" className="w-44 bg-zinc-950 border-zinc-800 text-zinc-300 rounded-none">
+                                <DropdownMenuContent align="end" className="w-44 bg-zinc-950 border-zinc-800 text-zinc-300 rounded-none z-50">
                                     <DropdownMenuItem asChild>
                                         <Link href={calendarUrls.google} target="_blank" className="cursor-pointer hover:bg-zinc-900 rounded-none" onClick={(e) => e.stopPropagation()}>
                                             Google Calendar
@@ -249,65 +258,53 @@ END:VCALENDAR`;
                                     <Button
                                         variant="outline"
                                         size="icon"
-                                        className="rounded-none border-2 border-zinc-800 bg-zinc-950 text-zinc-300 hover:bg-zinc-900 hover:text-white"
+                                        className="rounded-none border-2 border-zinc-800 bg-zinc-950 text-zinc-300 hover:bg-zinc-900 hover:text-white relative z-20"
                                         onClick={(e) => e.stopPropagation()}
                                         aria-label="Share"
                                     >
                                         <Share2 className="h-4 w-4" />
                                     </Button>
                                 </DropdownMenuTrigger>
-                                {(() => {
-                                    const rawUrl = opportunity.application_url && opportunity.application_url !== "#" 
-                                        ? opportunity.application_url 
-                                        : (typeof window !== "undefined" ? window.location.href : "https://leavethetrenches.com");
-                                    const shareUrl = encodeURIComponent(rawUrl);
-                                    const shareText = encodeURIComponent(`${opportunity.title} – ${opportunity.organization}`);
-                                    const twitter = `https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}`;
-                                    const linkedin = `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`;
-                                    const whatsapp = `https://wa.me/?text=${shareText}%20${shareUrl}`;
-                                    return (
-                                        <DropdownMenuContent align="end" className="w-48 bg-zinc-950 border-zinc-800 text-zinc-300 rounded-none">
-                                            <DropdownMenuItem asChild>
-                                                <a href={whatsapp} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none" onClick={(e) => e.stopPropagation()}>
-                                                    WhatsApp
-                                                </a>
-                                            </DropdownMenuItem>
-                                            <DropdownMenuItem asChild>
-                                                <a href={twitter} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none" onClick={(e) => e.stopPropagation()}>
-                                                    X / Twitter
-                                                </a>
-                                            </DropdownMenuItem>
-                                            <DropdownMenuItem asChild>
-                                                <a href={linkedin} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none" onClick={(e) => e.stopPropagation()}>
-                                                    LinkedIn
-                                                </a>
-                                            </DropdownMenuItem>
-                                            <DropdownMenuItem 
-                                                onSelect={(e) => {
-                                                    e.preventDefault();
-                                                    e.stopPropagation();
-                                                    const text = `${opportunity.title} – ${rawUrl}`;
-                                                    if (typeof navigator !== "undefined" && navigator.clipboard) {
-                                                        navigator.clipboard.writeText(text).then(() => {
-                                                            setCopied(true);
-                                                            setTimeout(() => setCopied(false), 1500);
-                                                        });
-                                                    }
-                                                }}
-                                                className="cursor-pointer hover:bg-zinc-900 rounded-none"
-                                            >
-                                                {copied ? "Copied" : "Copy Link"}
-                                            </DropdownMenuItem>
-                                        </DropdownMenuContent>
-                                    );
-                                })()}
+                                <DropdownMenuContent align="end" className="w-48 bg-zinc-950 border-zinc-800 text-zinc-300 rounded-none z-50">
+                                    <DropdownMenuItem asChild>
+                                        <a href={shareLinks.whatsapp} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none" onClick={(e) => e.stopPropagation()}>
+                                            WhatsApp
+                                        </a>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem asChild>
+                                        <a href={shareLinks.twitter} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none" onClick={(e) => e.stopPropagation()}>
+                                            X / Twitter
+                                        </a>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem asChild>
+                                        <a href={shareLinks.linkedin} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none" onClick={(e) => e.stopPropagation()}>
+                                            LinkedIn
+                                        </a>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem 
+                                        onSelect={(e) => {
+                                            e.preventDefault();
+                                            e.stopPropagation();
+                                            const text = `${shareTitle} – ${appUrl}`;
+                                            if (typeof navigator !== "undefined" && navigator.clipboard) {
+                                                navigator.clipboard.writeText(text).then(() => {
+                                                    setCopied(true);
+                                                    setTimeout(() => setCopied(false), 1500);
+                                                });
+                                            }
+                                        }}
+                                        className="cursor-pointer hover:bg-zinc-900 rounded-none"
+                                    >
+                                        {copied ? "Copied" : "Copy Link"}
+                                    </DropdownMenuItem>
+                                </DropdownMenuContent>
                             </DropdownMenu>
 
                             {/* Apply Button styled */}
                             <Button 
                                 asChild 
                                 size={compact ? "sm" : "default"}
-                                className="rounded-none"
+                                className="rounded-none relative z-20"
                             >
                                 <Link href={opportunity.application_url || "#"} target="_blank" onClick={(e) => e.stopPropagation()}>
                                     Apply <ArrowRightIcon className="ml-2 h-4 w-4" />
@@ -320,7 +317,6 @@ END:VCALENDAR`;
 
 
             <DialogContent className="max-w-3xl bg-zinc-950 border-2 border-zinc-800 shadow-[8px_8px_0px_0px_#27272a] text-zinc-100 p-0 overflow-hidden gap-0 rounded-none">
-                <div ref={contentRef} className="flex flex-col w-full bg-zinc-950">
                 {/* Header Image */}
                 <div className="relative h-64 w-full bg-zinc-900">
                     <Image
@@ -406,6 +402,45 @@ END:VCALENDAR`;
 
                 {/* Footer Actions */}
                 <div className="p-6 border-t-2 border-zinc-800 bg-zinc-950 flex flex-wrap justify-end gap-4">
+                    {/* Share in Modal */}
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <Button variant="outline" className="gap-2 border-2 border-zinc-800 text-zinc-300 hover:bg-zinc-900 hover:text-white rounded-none">
+                                <Share2 className="h-4 w-4" />
+                                Share
+                                <ChevronDown className="h-3 w-3 opacity-50" />
+                            </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end" className="w-48 bg-zinc-950 border-zinc-800 text-zinc-300 rounded-none">
+                            <DropdownMenuItem asChild>
+                                <a href={shareLinks.whatsapp} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none">
+                                    WhatsApp
+                                </a>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem asChild>
+                                <a href={shareLinks.twitter} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none">
+                                    X / Twitter
+                                </a>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem asChild>
+                                <a href={shareLinks.linkedin} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none">
+                                    LinkedIn
+                                </a>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem 
+                                onSelect={(e) => {
+                                    e.preventDefault();
+                                    const text = `${shareTitle} – ${appUrl}`;
+                                    if (typeof navigator !== "undefined" && navigator.clipboard) {
+                                        navigator.clipboard.writeText(text);
+                                    }
+                                }}
+                                className="cursor-pointer hover:bg-zinc-900 rounded-none"
+                            >
+                                Copy Link
+                            </DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                             <Button variant="outline" className="gap-2 border-2 border-zinc-800 text-zinc-300 hover:bg-zinc-900 hover:text-white rounded-none shadow-[4px_4px_0px_0px_#27272a] hover:shadow-[2px_2px_0px_0px_#27272a] hover:translate-x-[2px] hover:translate-y-[2px] transition-all">
@@ -442,7 +477,6 @@ END:VCALENDAR`;
                             Apply Now <ArrowRightIcon className="ml-2 h-4 w-4" />
                         </Link>
                     </Button>
-                </div>
                 </div>
             </DialogContent>
         </Dialog>
