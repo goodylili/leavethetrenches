@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRightIcon, Calendar, Globe, Building2, Wallet, CalendarPlus, ChevronDown, ChevronUp, Download } from "lucide-react";
+import { ArrowRightIcon, Calendar, Globe, Building2, Wallet, CalendarPlus, ChevronDown, ChevronUp, Download, Share2 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRef, useCallback, useState } from "react";
@@ -199,20 +199,117 @@ END:VCALENDAR`;
 
                     {/* Footer Actions */}
                     <div className="mt-auto pt-4 border-t-2 border-zinc-900 flex items-center justify-between gap-4">
-                         {opportunity.visa_sponsorship ? (
-                            <div className="flex items-center gap-1.5 text-xs font-bold text-emerald-400 uppercase tracking-wide">
-                                <Globe className="w-3.5 h-3.5" />
-                                <span>Visa Sponsored</span>
-                            </div>
-                        ) : (
-                            <div className="flex items-center gap-1.5 text-xs font-bold text-zinc-500 uppercase tracking-wide">
-                                <span>Check Eligibility</span>
+                        {/* Tags only when visa sponsored */}
+                        {opportunity.visa_sponsorship && (
+                            <div className="flex items-center gap-2">
+                                <span className="inline-flex items-center gap-1 px-2 py-1 text-[11px] font-bold rounded-none bg-zinc-900 border border-zinc-800 text-zinc-200">
+                                    {opportunity.category}
+                                </span>
+                                <span className="inline-flex items-center gap-1 px-2 py-1 text-[11px] font-bold rounded-none bg-zinc-900 border border-zinc-800 text-emerald-400">
+                                    <span className="text-base leading-none">{userCountry ? getCountryFlag(userCountry) : ''}</span>
+                                    Visa Eligible
+                                </span>
                             </div>
                         )}
 
-                        <span className="text-sm font-bold text-zinc-100 group-hover:translate-x-1 transition-transform flex items-center gap-1">
-                            View <ArrowRightIcon className="w-4 h-4" />
-                        </span>
+                        {/* Actions: Add to Calendar, Share, Apply */}
+                        <div className="flex items-center gap-2">
+                            {/* Add to Calendar Dropdown */}
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                    <Button
+                                        variant="outline"
+                                        size="icon"
+                                        className="rounded-none border-2 border-zinc-800 bg-zinc-950 text-zinc-300 hover:bg-zinc-900 hover:text-white"
+                                        onClick={(e) => e.stopPropagation()}
+                                        aria-label="Add to Calendar"
+                                    >
+                                        <CalendarPlus className="h-4 w-4" />
+                                    </Button>
+                                </DropdownMenuTrigger>
+                                <DropdownMenuContent align="end" className="w-44 bg-zinc-950 border-zinc-800 text-zinc-300 rounded-none">
+                                    <DropdownMenuItem asChild>
+                                        <Link href={calendarUrls.google} target="_blank" className="cursor-pointer hover:bg-zinc-900 rounded-none" onClick={(e) => e.stopPropagation()}>
+                                            Google Calendar
+                                        </Link>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem asChild>
+                                        <Link href={calendarUrls.outlook} target="_blank" className="cursor-pointer hover:bg-zinc-900 rounded-none" onClick={(e) => e.stopPropagation()}>
+                                            Outlook Calendar
+                                        </Link>
+                                    </DropdownMenuItem>
+                                    <DropdownMenuItem asChild>
+                                        <a href={calendarUrls.ics} download={`${opportunity.title.replace(/\s+/g, '-').toLowerCase()}.ics`} className="cursor-pointer hover:bg-zinc-900 rounded-none" onClick={(e) => e.stopPropagation()}>
+                                            Download ICS
+                                        </a>
+                                    </DropdownMenuItem>
+                                </DropdownMenuContent>
+                            </DropdownMenu>
+
+                            {/* Share Dropdown */}
+                            <DropdownMenu>
+                                <DropdownMenuTrigger asChild>
+                                    <Button
+                                        variant="outline"
+                                        size="icon"
+                                        className="rounded-none border-2 border-zinc-800 bg-zinc-950 text-zinc-300 hover:bg-zinc-900 hover:text-white"
+                                        onClick={(e) => e.stopPropagation()}
+                                        aria-label="Share"
+                                    >
+                                        <Share2 className="h-4 w-4" />
+                                    </Button>
+                                </DropdownMenuTrigger>
+                                {(() => {
+                                    const shareUrl = encodeURIComponent(opportunity.application_url || '');
+                                    const shareText = encodeURIComponent(`${opportunity.title} – ${opportunity.organization}`);
+                                    const twitter = `https://twitter.com/intent/tweet?text=${shareText}&url=${shareUrl}`;
+                                    const linkedin = `https://www.linkedin.com/sharing/share-offsite/?url=${shareUrl}`;
+                                    const facebook = `https://www.facebook.com/sharer/sharer.php?u=${shareUrl}`;
+                                    const whatsapp = `https://api.whatsapp.com/send?text=${shareText}%20${shareUrl}`;
+                                    const reddit = `https://www.reddit.com/submit?url=${shareUrl}&title=${shareText}`;
+                                    return (
+                                        <DropdownMenuContent align="end" className="w-48 bg-zinc-950 border-zinc-800 text-zinc-300 rounded-none">
+                                            <DropdownMenuItem asChild>
+                                                <a href={twitter} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none" onClick={(e) => e.stopPropagation()}>
+                                                    X / Twitter
+                                                </a>
+                                            </DropdownMenuItem>
+                                            <DropdownMenuItem asChild>
+                                                <a href={linkedin} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none" onClick={(e) => e.stopPropagation()}>
+                                                    LinkedIn
+                                                </a>
+                                            </DropdownMenuItem>
+                                            <DropdownMenuItem asChild>
+                                                <a href={facebook} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none" onClick={(e) => e.stopPropagation()}>
+                                                    Facebook
+                                                </a>
+                                            </DropdownMenuItem>
+                                            <DropdownMenuItem asChild>
+                                                <a href={whatsapp} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none" onClick={(e) => e.stopPropagation()}>
+                                                    WhatsApp
+                                                </a>
+                                            </DropdownMenuItem>
+                                            <DropdownMenuItem asChild>
+                                                <a href={reddit} target="_blank" rel="noopener noreferrer" className="cursor-pointer hover:bg-zinc-900 rounded-none" onClick={(e) => e.stopPropagation()}>
+                                                    Reddit
+                                                </a>
+                                            </DropdownMenuItem>
+                                        </DropdownMenuContent>
+                                    );
+                                })()}
+                            </DropdownMenu>
+
+                            {/* Apply Button styled */}
+                            <Button 
+                                asChild 
+                                size={compact ? "sm" : "default"}
+                                className="rounded-none"
+                            >
+                                <Link href={opportunity.application_url || "#"} target="_blank" onClick={(e) => e.stopPropagation()}>
+                                    Apply <ArrowRightIcon className="ml-2 h-4 w-4" />
+                                </Link>
+                            </Button>
+                        </div>
                     </div>
                 </div>
             </div>
