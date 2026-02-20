@@ -24,7 +24,7 @@ import {
 } from "@/components/ui/select";
 import { ComboboxInput } from "@/components/ui/combobox-input";
 import { COUNTRIES } from "@/data/countries";
-import { ArrowRight, Bell, CheckCircle2 } from "lucide-react";
+import { ArrowRight, Bell, CheckCircle2, Upload } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -42,6 +42,7 @@ type Opportunity = {
   title: string;
   category: OpportunityCategory;
   sub_category: string;
+  image_url: string;
   country: string;
   region: string;
   funding_type: string;
@@ -68,6 +69,7 @@ type OpportunityFormState = {
   title: string;
   category: OpportunityCategory | "";
   sub_category: string;
+  image_url: string;
   country: string;
   region: string;
   funding_type: string;
@@ -94,6 +96,7 @@ const defaultFormState: OpportunityFormState = {
   title: "",
   category: "",
   sub_category: "",
+  image_url: "",
   country: "",
   region: "Africa",
   funding_type: "",
@@ -148,6 +151,7 @@ function toOpportunityPayload(form: OpportunityFormState): Opportunity | null {
     title: form.title,
     category: form.category,
     sub_category: form.sub_category,
+    image_url: form.image_url.trim(),
     country: form.country,
     region: form.region,
     funding_type: form.funding_type,
@@ -331,6 +335,38 @@ export default function PostOpportunityPage() {
                         onChange={handleChange("title")}
                         required
                       />
+                    </div>
+                  </div>
+
+                  <div className="space-y-2 border-b border-zinc-800 pb-5">
+                    <p className="text-[11px] font-semibold text-zinc-500 uppercase tracking-[0.18em]">
+                      Cover image
+                    </p>
+                    <div className="space-y-2">
+                      <div className="flex items-center gap-3 rounded-none border border-dashed border-zinc-700 bg-zinc-950/40 px-3 py-3">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-none border border-zinc-800 bg-zinc-950">
+                          <Upload className="h-5 w-5 text-zinc-400" />
+                        </div>
+                        <div className="flex flex-col">
+                          <span className="text-xs font-medium text-zinc-200">
+                            Paste an image URL for this opportunity
+                          </span>
+                          <span className="text-[10px] text-zinc-500">
+                            Use a landscape banner from the official site or press.
+                          </span>
+                        </div>
+                      </div>
+                      <div className="space-y-1.5">
+                        <label className="text-xs font-medium text-zinc-300">
+                          Image URL
+                        </label>
+                        <Input
+                          type="url"
+                          placeholder="https://images.example.com/opportunity-banner.jpg"
+                          value={form.image_url}
+                          onChange={handleChange("image_url")}
+                        />
+                      </div>
                     </div>
                   </div>
 
