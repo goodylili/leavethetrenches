@@ -150,6 +150,36 @@ END:VCALENDAR`;
         linkedin: `https://www.linkedin.com/sharing/share-offsite/?url=${encShareUrl}`,
     };
 
+    const copyToClipboard = useCallback(async (text: string) => {
+        if (typeof navigator !== "undefined" && navigator.clipboard?.writeText) {
+            try {
+                await navigator.clipboard.writeText(text);
+                return true;
+            } catch {
+            }
+        }
+
+        if (typeof document !== "undefined") {
+            const textarea = document.createElement("textarea");
+            textarea.value = text;
+            textarea.style.position = "fixed";
+            textarea.style.opacity = "0";
+            document.body.appendChild(textarea);
+            textarea.focus();
+            textarea.select();
+            try {
+                const successful = document.execCommand("copy");
+                document.body.removeChild(textarea);
+                return successful;
+            } catch {
+                document.body.removeChild(textarea);
+                return false;
+            }
+        }
+
+        return false;
+    }, []);
+
     const handleDownload = useCallback(async () => {
         if (contentRef.current === null) {
             return;
@@ -312,15 +342,14 @@ END:VCALENDAR`;
                                         </a>
                                     </DropdownMenuItem>
                                     <DropdownMenuItem 
-                                        onSelect={(e) => {
+                                        onSelect={async (e) => {
                                             e.preventDefault();
                                             e.stopPropagation();
                                             const text = `${shareTitle} – ${appUrl}`;
-                                            if (typeof navigator !== "undefined" && navigator.clipboard) {
-                                                navigator.clipboard.writeText(text).then(() => {
-                                                    setCopied(true);
-                                                    setTimeout(() => setCopied(false), 1500);
-                                                });
+                                            const ok = await copyToClipboard(text);
+                                            if (ok) {
+                                                setCopied(true);
+                                                setTimeout(() => setCopied(false), 1500);
                                             }
                                         }}
                                         className="cursor-pointer hover:bg-zinc-900 rounded-none"
@@ -349,7 +378,7 @@ END:VCALENDAR`;
 
 
             <DialogContent className="max-w-3xl bg-zinc-950 border-2 border-zinc-800 shadow-[8px_8px_0px_0px_#27272a] text-zinc-100 p-0 overflow-hidden gap-0 rounded-none">
-                {/* Header Image */}
+                <div ref={contentRef}>
                 <div className="relative h-64 w-full bg-zinc-900">
                     <Image
                         src={opportunity.image_url || defaultImage}
@@ -371,7 +400,6 @@ END:VCALENDAR`;
                     </div>
                 </div>
 
-                {/* Content */}
                 <div className="p-6 md:p-8 space-y-8 max-h-[60vh] overflow-y-auto">
                     {/* Key Details Grid */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -432,7 +460,6 @@ END:VCALENDAR`;
                     </div>
                 </div>
 
-                {/* Footer Actions */}
                 <div className="p-4 md:p-6 border-t-2 border-zinc-800 bg-zinc-950 flex flex-wrap justify-end gap-3 md:gap-4">
                     {/* Share in Modal */}
                     <DropdownMenu>
@@ -463,12 +490,10 @@ END:VCALENDAR`;
                                 </a>
                             </DropdownMenuItem>
                             <DropdownMenuItem 
-                                onSelect={(e) => {
+                                onSelect={async (e) => {
                                     e.preventDefault();
                                     const text = `${shareTitle} – ${appUrl}`;
-                                    if (typeof navigator !== "undefined" && navigator.clipboard) {
-                                        navigator.clipboard.writeText(text);
-                                    }
+                                    await copyToClipboard(text);
                                 }}
                                 className="cursor-pointer hover:bg-zinc-900 rounded-none"
                             >
@@ -489,11 +514,9 @@ END:VCALENDAR`;
                         </DropdownMenuTrigger>
                         <DropdownMenuContent align="end" className="w-60 bg-zinc-950 border-zinc-800 text-zinc-300 rounded-none">
                             <DropdownMenuItem
-                                onSelect={(e) => {
+                                onSelect={async (e) => {
                                     e.preventDefault();
-                                    if (typeof navigator !== "undefined" && navigator.clipboard) {
-                                        navigator.clipboard.writeText(aiPrompt);
-                                    }
+                                    await copyToClipboard(aiPrompt);
                                     if (typeof window !== "undefined") {
                                         window.open("https://chatgpt.com", "_blank", "noopener,noreferrer");
                                     }
@@ -506,11 +529,9 @@ END:VCALENDAR`;
                                 </div>
                             </DropdownMenuItem>
                             <DropdownMenuItem
-                                onSelect={(e) => {
+                                onSelect={async (e) => {
                                     e.preventDefault();
-                                    if (typeof navigator !== "undefined" && navigator.clipboard) {
-                                        navigator.clipboard.writeText(aiPrompt);
-                                    }
+                                    await copyToClipboard(aiPrompt);
                                     if (typeof window !== "undefined") {
                                         window.open("https://claude.ai/new", "_blank", "noopener,noreferrer");
                                     }
@@ -523,11 +544,9 @@ END:VCALENDAR`;
                                 </div>
                             </DropdownMenuItem>
                             <DropdownMenuItem
-                                onSelect={(e) => {
+                                onSelect={async (e) => {
                                     e.preventDefault();
-                                    if (typeof navigator !== "undefined" && navigator.clipboard) {
-                                        navigator.clipboard.writeText(aiPrompt);
-                                    }
+                                    await copyToClipboard(aiPrompt);
                                 }}
                                 className="cursor-pointer hover:bg-zinc-900 rounded-none flex items-center gap-2"
                             >
@@ -575,6 +594,7 @@ END:VCALENDAR`;
                             Apply Now <ArrowRightIcon className="ml-2 h-4 w-4" />
                         </Link>
                     </Button>
+                </div>
                 </div>
             </DialogContent>
         </Dialog>
