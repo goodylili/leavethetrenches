@@ -476,10 +476,14 @@ END:VCALENDAR`;
                                         window.open("https://chatgpt.com", "_blank", "noopener,noreferrer");
                                     }
                                 }}
-                                className="cursor-pointer hover:bg-zinc-900 rounded-none flex items-center gap-2"
+                                className="cursor-pointer hover:bg-zinc-900 rounded-none"
                             >
-                                <Sparkles className="h-4 w-4" />
-                                <span>Open in ChatGPT</span>
+                                <div className="flex items-center gap-2">
+                                    <span className="inline-flex h-5 w-7 items-center justify-center rounded-none border border-zinc-700 bg-zinc-900 text-[9px] font-semibold tracking-[0.14em]">
+                                        GPT
+                                    </span>
+                                    <span>Open in ChatGPT</span>
+                                </div>
                             </DropdownMenuItem>
                             <DropdownMenuItem
                                 onSelect={(e) => {
@@ -491,10 +495,14 @@ END:VCALENDAR`;
                                         window.open("https://claude.ai/new", "_blank", "noopener,noreferrer");
                                     }
                                 }}
-                                className="cursor-pointer hover:bg-zinc-900 rounded-none flex items-center gap-2"
+                                className="cursor-pointer hover:bg-zinc-900 rounded-none"
                             >
-                                <Sparkles className="h-4 w-4" />
-                                <span>Open in Claude</span>
+                                <div className="flex items-center gap-2">
+                                    <span className="inline-flex h-5 w-7 items-center justify-center rounded-none border border-zinc-700 bg-zinc-900 text-[9px] font-semibold tracking-[0.14em]">
+                                        CL
+                                    </span>
+                                    <span>Open in Claude</span>
+                                </div>
                             </DropdownMenuItem>
                             <DropdownMenuItem
                                 onSelect={(e) => {
