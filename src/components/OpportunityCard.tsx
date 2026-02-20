@@ -516,9 +516,10 @@ END:VCALENDAR`;
                             <DropdownMenuItem
                                 onSelect={async (e) => {
                                     e.preventDefault();
+                                    const url = `https://chatgpt.com/?q=${encodeURIComponent(aiPrompt)}`;
                                     await copyToClipboard(aiPrompt);
                                     if (typeof window !== "undefined") {
-                                        window.open("https://chatgpt.com", "_blank", "noopener,noreferrer");
+                                        window.open(url, "_blank", "noopener,noreferrer");
                                     }
                                 }}
                                 className="cursor-pointer hover:bg-zinc-900 rounded-none"
@@ -531,9 +532,10 @@ END:VCALENDAR`;
                             <DropdownMenuItem
                                 onSelect={async (e) => {
                                     e.preventDefault();
+                                    const url = `https://claude.ai/new?q=${encodeURIComponent(aiPrompt)}`;
                                     await copyToClipboard(aiPrompt);
                                     if (typeof window !== "undefined") {
-                                        window.open("https://claude.ai/new", "_blank", "noopener,noreferrer");
+                                        window.open(url, "_blank", "noopener,noreferrer");
                                     }
                                 }}
                                 className="cursor-pointer hover:bg-zinc-900 rounded-none"
