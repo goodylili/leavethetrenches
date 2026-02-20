@@ -1,6 +1,6 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ArrowRightIcon, Calendar, CalendarClock, Globe, Building2, Wallet, CalendarPlus, ChevronDown, ChevronUp, Download, Share2, Twitter, Linkedin, MessageCircle, Copy } from "lucide-react";
+import { ArrowRightIcon, Calendar, CalendarClock, Globe, Building2, Wallet, CalendarPlus, ChevronDown, ChevronUp, Download, Share2, Twitter, Linkedin, MessageCircle, Copy, Sparkles } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRef, useCallback, useState } from "react";
@@ -74,7 +74,7 @@ export function OpportunityCard({ opportunity, userCountry, compact = false }: {
         : new Date(opportunity.deadline!).toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
 
     // Default placeholder images based on category if none provided
-    const defaultImage = "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&auto=format&fit=crop&q=60"; // Generic tech/office
+    const defaultImage = "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&auto=format&fit=crop&q=60";
 
     // Calendar URL generation
     const calendarUrls = (() => {
@@ -112,6 +112,8 @@ END:VCALENDAR`;
 
         return { google, outlook, ics };
     })();
+
+    const aiPrompt = `Help me with an application for this opportunity.\n\nTitle: ${opportunity.title}\nOrganization: ${opportunity.organization || "Unknown"}\nCategory: ${opportunity.category}${opportunity.sub_category ? ` – ${opportunity.sub_category}` : ""}\nCountry: ${opportunity.country}\nFunding: ${opportunity.funding_type || "Not specified"}\nDeadline: ${dateText}\nApplication URL: ${opportunity.application_url || "Not provided"}\n\nPlease help me understand if I am a good fit, how to position my background, and how to draft a strong application.`;
 
     const contentRef = useRef<HTMLDivElement>(null);
     const [isDescriptionOpen, setIsDescriptionOpen] = useState(true);
@@ -452,6 +454,59 @@ END:VCALENDAR`;
                                     <Copy className="h-4 w-4" />
                                     <span>Copy Link</span>
                                 </div>
+                            </DropdownMenuItem>
+                        </DropdownMenuContent>
+                    </DropdownMenu>
+                    <DropdownMenu>
+                        <DropdownMenuTrigger asChild>
+                            <Button variant="outline" className="gap-2 border-2 border-zinc-800 text-zinc-300 hover:bg-zinc-900 hover:text-white rounded-none shadow-[4px_4px_0px_0px_#27272a] hover:shadow-[2px_2px_0px_0px_#27272a] hover:translate-x-[2px] hover:translate-y-[2px] transition-all h-10 md:h-11 px-4 md:px-6">
+                                <Sparkles className="h-4 w-4" />
+                                Ask AI
+                                <ChevronDown className="h-3 w-3 opacity-50" />
+                            </Button>
+                        </DropdownMenuTrigger>
+                        <DropdownMenuContent align="end" className="w-60 bg-zinc-950 border-zinc-800 text-zinc-300 rounded-none">
+                            <DropdownMenuItem
+                                onSelect={(e) => {
+                                    e.preventDefault();
+                                    if (typeof navigator !== "undefined" && navigator.clipboard) {
+                                        navigator.clipboard.writeText(aiPrompt);
+                                    }
+                                    if (typeof window !== "undefined") {
+                                        window.open("https://chatgpt.com", "_blank", "noopener,noreferrer");
+                                    }
+                                }}
+                                className="cursor-pointer hover:bg-zinc-900 rounded-none flex items-center gap-2"
+                            >
+                                <Sparkles className="h-4 w-4" />
+                                <span>Open in ChatGPT</span>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem
+                                onSelect={(e) => {
+                                    e.preventDefault();
+                                    if (typeof navigator !== "undefined" && navigator.clipboard) {
+                                        navigator.clipboard.writeText(aiPrompt);
+                                    }
+                                    if (typeof window !== "undefined") {
+                                        window.open("https://claude.ai/new", "_blank", "noopener,noreferrer");
+                                    }
+                                }}
+                                className="cursor-pointer hover:bg-zinc-900 rounded-none flex items-center gap-2"
+                            >
+                                <Sparkles className="h-4 w-4" />
+                                <span>Open in Claude</span>
+                            </DropdownMenuItem>
+                            <DropdownMenuItem
+                                onSelect={(e) => {
+                                    e.preventDefault();
+                                    if (typeof navigator !== "undefined" && navigator.clipboard) {
+                                        navigator.clipboard.writeText(aiPrompt);
+                                    }
+                                }}
+                                className="cursor-pointer hover:bg-zinc-900 rounded-none flex items-center gap-2"
+                            >
+                                <Copy className="h-4 w-4" />
+                                <span>Copy AI brief</span>
                             </DropdownMenuItem>
                         </DropdownMenuContent>
                     </DropdownMenu>
