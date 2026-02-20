@@ -24,13 +24,45 @@ import {
 } from "@/components/ui/select";
 import { ComboboxInput } from "@/components/ui/combobox-input";
 import { COUNTRIES } from "@/data/countries";
-import type { OpportunityCategory, Opportunity } from "@/scrapers/types";
 import { ArrowRight, Bell, CheckCircle2 } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+
+type OpportunityCategory =
+  | "education"
+  | "jobs"
+  | "immigration"
+  | "fellowships"
+  | "builders_funding";
+
+type Opportunity = {
+  title: string;
+  category: OpportunityCategory;
+  sub_category: string;
+  country: string;
+  region: string;
+  funding_type: string;
+  funding_amount: string;
+  equity_required: boolean;
+  visa_sponsorship: boolean;
+  remote_allowed: boolean;
+  target_audience: string[];
+  education_level_required: string;
+  experience_level_required: string;
+  industry: string[];
+  deadline: string;
+  rolling_deadline: boolean;
+  application_url: string;
+  official_source_verified: boolean;
+  eligibility_summary: string;
+  required_documents: string[];
+  benefits_summary: string;
+  risk_flags: string[];
+  confidence_score: number;
+};
 
 type OpportunityFormState = {
   title: string;
