@@ -62,14 +62,24 @@ const getCountryFlag = (country: string) => {
 };
 
 const ChatGPTLogoMark = () => (
-    <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-zinc-700 bg-[#10a37f] text-[9px] font-semibold text-zinc-950">
-        G
+    <span className="inline-flex h-5 w-5 items-center justify-center rounded-full overflow-hidden border border-zinc-700 bg-zinc-950">
+        <Image
+            src="https://unavatar.io/chatgpt.com"
+            alt="ChatGPT logo"
+            width={16}
+            height={16}
+        />
     </span>
 );
 
 const ClaudeLogoMark = () => (
-    <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-zinc-700 bg-amber-400 text-[9px] font-semibold text-zinc-950">
-        C
+    <span className="inline-flex h-5 w-5 items-center justify-center rounded-full overflow-hidden border border-zinc-700 bg-zinc-950">
+        <Image
+            src="https://unavatar.io/claude.ai"
+            alt="Claude logo"
+            width={16}
+            height={16}
+        />
     </span>
 );
 
