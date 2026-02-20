@@ -940,7 +940,7 @@ export default function Home() {
             </p>
 
             {/* Search Box Container */}
-            <div className="bg-zinc-950 border-2 border-zinc-800 shadow-[4px_4px_0px_0px_#27272a] hover:border-primary hover:shadow-[4px_4px_0px_0px_var(--primary)] p-2 rounded-none flex flex-col md:flex-row gap-2 w-full mx-auto animate-in fade-in zoom-in duration-700 slide-in-from-bottom-4 delay-200 transition-all">
+            <div className="border border-white/18 bg-white/10/80 backdrop-blur-2xl bg-clip-padding shadow-[0_30px_80px_rgba(15,23,42,0.95)] p-2 rounded-none flex flex-col md:flex-row gap-2 w-full mx-auto animate-in fade-in zoom-in duration-700 slide-in-from-bottom-4 delay-200 transition-all">
               <div className="relative flex-1 group">
                 <SearchIcon className="absolute left-4 top-3.5 h-5 w-5 text-zinc-500 group-focus-within:text-zinc-200 transition-colors" />
                 <Input
@@ -950,7 +950,7 @@ export default function Home() {
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
               </div>
-              <div className="w-px bg-zinc-900 my-2 hidden md:block" />
+              <div className="w-px bg-white/10 my-2 hidden md:block" />
               <div className="relative flex-1 md:flex-[0.6] group">
                 <MapPinIcon className="absolute left-4 top-3.5 h-5 w-5 text-zinc-500 group-focus-within:text-zinc-200 transition-colors z-10" />
                 <ComboboxInput

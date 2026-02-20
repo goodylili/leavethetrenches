@@ -94,11 +94,11 @@ export function OnboardingModal({ onComplete, open: controlledOpen, onOpenChange
             if (setIsOpen) setIsOpen(open);
         }}>
             {trigger && trigger}
-            <DialogContent className="sm:max-w-md border-2 border-zinc-800 bg-zinc-950 text-white shadow-[8px_8px_0px_0px_#27272a] rounded-none">
+            <DialogContent className="sm:max-w-md border border-white/18 bg-white/10/85 text-white shadow-[0_30px_80px_rgba(15,23,42,0.95)] rounded-none backdrop-blur-2xl bg-clip-padding">
                 <DialogHeader>
                     {step === 1 ? (
                         <div className="flex flex-col items-center text-center space-y-4 pt-4">
-                            <div className="h-12 w-12 rounded-none bg-primary/10 flex items-center justify-center mb-2">
+                            <div className="h-12 w-12 rounded-none border border-white/25 bg-white/15 flex items-center justify-center mb-2 backdrop-blur-sm">
                                 <Mail className="h-6 w-6 text-primary" />
                             </div>
                             <DialogTitle className="text-2xl font-bold">Join the Movement</DialogTitle>
@@ -108,7 +108,7 @@ export function OnboardingModal({ onComplete, open: controlledOpen, onOpenChange
                         </div>
                     ) : (
                         <div className="flex flex-col items-center text-center space-y-4 pt-4">
-                            <div className="h-12 w-12 rounded-none bg-primary/10 flex items-center justify-center mb-2">
+                            <div className="h-12 w-12 rounded-none border border-white/25 bg-white/15 flex items-center justify-center mb-2 backdrop-blur-sm">
                                 <Globe className="h-6 w-6 text-primary" />
                             </div>
                             <DialogTitle className="text-2xl font-bold">Personalize Your Feed</DialogTitle>
@@ -124,11 +124,11 @@ export function OnboardingModal({ onComplete, open: controlledOpen, onOpenChange
                         <div className="space-y-4">
                             <Input
                                 placeholder="Enter your email"
-                                className="bg-zinc-900 border-zinc-700 h-12 text-base text-center focus-visible:ring-primary focus-visible:border-primary"
+                                className="h-12 text-base text-center border-white/25 bg-white/10/80 focus-visible:ring-primary focus-visible:border-primary"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
-                            <Button onClick={handleNext} className="w-full h-12 text-base font-semibold rounded-none bg-primary text-primary-foreground hover:bg-primary/90">
+                            <Button onClick={handleNext} className="w-full h-12 text-base font-semibold rounded-none">
                                 Join Newsletter & Continue
                             </Button>
                             <Button variant="ghost" onClick={() => { if(setIsOpen) setIsOpen(false); }} className="w-full text-zinc-500 hover:text-primary">
@@ -138,10 +138,10 @@ export function OnboardingModal({ onComplete, open: controlledOpen, onOpenChange
                     ) : (
                         <div className="space-y-4">
                             <Select value={country} onValueChange={setCountry}>
-                                <SelectTrigger className="w-full h-12 bg-zinc-900 border-zinc-700 focus:ring-primary">
+                                <SelectTrigger className="w-full h-12 bg-white/5 border-white/25 backdrop-blur-sm">
                                     <SelectValue placeholder="Select your country of origin" />
                                 </SelectTrigger>
-                                <SelectContent className="bg-zinc-900 border-zinc-700 text-white">
+                                <SelectContent className="bg-slate-900/90 border-white/20 text-white backdrop-blur-xl">
                                     <SelectGroup>
                                         <SelectLabel>Africa</SelectLabel>
                                         {COUNTRIES.filter(c => ["Nigeria", "Ghana", "Kenya", "South Africa", "Egypt", "Uganda", "Rwanda", "Ethiopia"].includes(c)).map(c => (
