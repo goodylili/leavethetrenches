@@ -17,13 +17,11 @@ import { GetAlertsButton } from "@/components/GetAlertsButton";
 export function Header() {
     return (
         <div className="container max-w-7xl mx-auto px-4 pt-6 z-50 relative">
-            {/* Floating Header Card */}
-            <header className="rounded-none bg-zinc-950 border-2 border-zinc-800 hover:border-primary shadow-[4px_4px_0px_0px_#27272a] hover:shadow-[4px_4px_0px_0px_var(--primary)] text-white pl-6 pr-2 py-2 transition-all">
+            <header className="rounded-none border border-white/18 bg-white/7 backdrop-blur-xl bg-clip-padding text-white pl-6 pr-2 py-2 shadow-[0_22px_55px_rgba(15,23,42,0.9)] transition-all">
                 <div className="flex h-12 items-center justify-between">
                     <div className="flex items-center gap-8">
                         <Link href="/" className="flex items-center gap-3">
-                            <div className="h-8 w-8 bg-primary/10 rounded-none flex items-center justify-center border border-primary/10">
-                                {/* Simplified Logo for Header */}
+                            <div className="h-8 w-8 rounded-none flex items-center justify-center border border-white/25 bg-white/15 backdrop-blur-sm">
                                 <img src="/logo.svg" alt="LTT" className="h-5 w-5" />
                             </div>
                             <span className="font-bold text-lg tracking-tight hidden sm:block text-primary">Leave the Trenches</span>

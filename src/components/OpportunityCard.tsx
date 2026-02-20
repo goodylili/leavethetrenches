@@ -377,7 +377,7 @@ END:VCALENDAR`;
             </div>
 
 
-            <DialogContent className="max-w-3xl bg-zinc-950 border-2 border-zinc-800 shadow-[8px_8px_0px_0px_#27272a] text-zinc-100 p-0 overflow-hidden gap-0 rounded-none">
+            <DialogContent className="max-w-3xl border border-white/18 bg-white/7 backdrop-blur-2xl text-zinc-100 p-0 overflow-hidden gap-0 rounded-none shadow-[0_28px_70px_rgba(15,23,42,0.95)]">
                 <div ref={contentRef}>
                 <div className="relative h-64 w-full bg-zinc-900">
                     <Image

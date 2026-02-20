@@ -252,8 +252,8 @@ export default function PostOpportunityPage() {
           </div>
 
           <div className="mt-10 max-w-4xl mx-auto">
-            <Card className="border-2 border-zinc-800 bg-zinc-950 shadow-[6px_6px_0px_0px_#27272a]">
-              <CardHeader className="border-b-2 border-zinc-900 pb-4">
+            <Card className="border border-white/18 bg-white/7 shadow-[0_24px_60px_rgba(15,23,42,0.9)]">
+              <CardHeader className="border-b border-white/15 pb-4">
                 <CardTitle className="flex items-center gap-2 text-xl">
                   <span className="inline-flex h-7 w-7 items-center justify-center rounded-none bg-primary/10 border border-primary/40">
                     <ArrowRight className="h-4 w-4 text-primary" />
@@ -268,7 +268,7 @@ export default function PostOpportunityPage() {
               </CardHeader>
               <CardContent className="pt-4">
                 <div className="mb-4 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-                  <div className="rounded-none border border-amber-500/60 bg-amber-950/40 px-3 py-2 text-[11px] text-amber-100">
+                  <div className="rounded-none border border-amber-400/60 bg-amber-400/10 px-3 py-2 text-[11px] text-amber-100 backdrop-blur-sm">
                     <span className="font-semibold">Human review:</span> we
                     manually check every contribution against the official
                     source before it appears on the site.
