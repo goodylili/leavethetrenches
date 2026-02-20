@@ -69,6 +69,7 @@ type OpportunityFormState = {
   title: string;
   category: OpportunityCategory | "";
   sub_category: string;
+  terms_accepted: boolean;
   image_url: string;
   country: string;
   region: string;
@@ -96,6 +97,7 @@ const defaultFormState: OpportunityFormState = {
   title: "",
   category: "",
   sub_category: "",
+  terms_accepted: false,
   image_url: "",
   country: "",
   region: "Africa",
@@ -203,6 +205,13 @@ export default function PostOpportunityPage() {
     e.preventDefault();
     setError(null);
 
+    if (!form.terms_accepted) {
+      setError(
+        "Please confirm that this opportunity is real, relevant for African participants, and on an official or reputable website."
+      );
+      return;
+    }
+
     const payload = toOpportunityPayload(form);
     if (!payload) {
       setError(
@@ -239,11 +248,6 @@ export default function PostOpportunityPage() {
               tailored for Africans. We capture everything needed for
               verification and structured search. Every contribution is manually
               reviewed by the Leave the Trenches team before it goes live.
-            </p>
-            <p className="text-xs text-zinc-500">
-              By contributing, you confirm this opportunity is real, relevant
-              for African participants, and hosted on an official or reputable
-              website. We may edit copy for clarity and consistency.
             </p>
           </div>
 
@@ -789,6 +793,28 @@ export default function PostOpportunityPage() {
                       {error}
                     </div>
                   )}
+
+                  <div className="mt-2">
+                    <label className="flex items-start gap-2 text-[11px] text-zinc-300">
+                      <input
+                        type="checkbox"
+                        className="mt-[2px] h-4 w-4 border-2 border-zinc-700 bg-zinc-950 text-primary"
+                        checked={form.terms_accepted}
+                        onChange={(e) =>
+                          setForm((prev) => ({
+                            ...prev,
+                            terms_accepted: e.target.checked,
+                          }))
+                        }
+                      />
+                      <span>
+                        By contributing, I confirm this opportunity is real, relevant
+                        for African participants, and hosted on an official or reputable
+                        website. I understand that the team may edit copy for clarity
+                        and consistency.
+                      </span>
+                    </label>
+                  </div>
 
                   <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 pt-2">
                     <div className="flex gap-2 w-full sm:w-auto">
