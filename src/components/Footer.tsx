@@ -9,8 +9,8 @@ import { TwitterIcon, LinkedinIcon, InstagramIcon } from "lucide-react";
 
 export default function Footer() {
     return (
-        <section className="bg-zinc-950 py-4 px-4 md:px-6 mt-auto">
-            <footer className="relative mx-auto max-w-7xl overflow-hidden rounded-none bg-zinc-950 text-white py-8 px-6 md:px-12 border-2 border-zinc-800 shadow-[8px_8px_0px_0px_#27272a]">
+        <section className="bg-background py-4 px-4 md:px-6 mt-auto">
+            <footer className="relative mx-auto max-w-7xl overflow-hidden rounded-none bg-white/5 text-white py-8 px-6 md:px-12 border border-white/18 shadow-[0_26px_70px_rgba(15,23,42,0.95)] backdrop-blur-2xl bg-clip-padding">
                 {/* Background Text Effect - Marquee */}
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full select-none pointer-events-none z-0 opacity-[0.02]">
                     <div className="animate-marquee whitespace-nowrap">
@@ -107,9 +107,9 @@ export default function Footer() {
                     </div>
 
                     {/* Mobile Navigation - Accordions */}
-                    <div className="md:hidden col-span-1 border-t-2 border-zinc-800 pt-4">
+                    <div className="md:hidden col-span-1 border-t border-white/15 pt-4">
                         <Accordion type="single" collapsible className="w-full">
-                            <AccordionItem value="explore" className="border-b-2 border-zinc-800">
+                            <AccordionItem value="explore" className="border-b border-white/12">
                                 <AccordionTrigger className="text-sm font-bold text-zinc-500 uppercase tracking-wider hover:text-primary hover:no-underline px-1">
                                     Explore
                                 </AccordionTrigger>
@@ -121,7 +121,7 @@ export default function Footer() {
                                     </ul>
                                 </AccordionContent>
                             </AccordionItem>
-                            <AccordionItem value="resources" className="border-b-2 border-zinc-800">
+                            <AccordionItem value="resources" className="border-b border-white/12">
                                 <AccordionTrigger className="text-sm font-bold text-zinc-500 uppercase tracking-wider hover:text-primary hover:no-underline px-1">
                                     Resources
                                 </AccordionTrigger>
@@ -149,7 +149,7 @@ export default function Footer() {
                     </div>
                 </div>
 
-                <div className="relative z-10 flex flex-col md:flex-row justify-between items-center text-xs text-zinc-500 border-t-2 border-zinc-800 pt-6 mt-8">
+                <div className="relative z-10 flex flex-col md:flex-row justify-between items-center text-xs text-zinc-500 border-t border-white/15 pt-6 mt-8">
                     <p>© {new Date().getFullYear()} Leave the Trenches. All rights reserved.</p>
                     <p className="mt-2 md:mt-0">Built with 💚 for Africa</p>
                 </div>

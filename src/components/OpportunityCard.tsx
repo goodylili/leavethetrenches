@@ -198,7 +198,7 @@ END:VCALENDAR`;
 
     return (
         <Dialog>
-            <div className={`group flex ${compact ? 'flex-col h-full' : 'flex-col md:flex-row'} w-full bg-zinc-950 border-2 border-zinc-800 shadow-[4px_4px_0px_0px_#27272a] hover:border-primary hover:shadow-[6px_6px_0px_0px_var(--primary)] transition-all duration-200 overflow-hidden relative rounded-none`}>
+            <div className={`group flex ${compact ? 'flex-col h-full' : 'flex-col md:flex-row'} w-full border border-white/18 bg-white/5 backdrop-blur-xl bg-clip-padding shadow-[0_22px_55px_rgba(15,23,42,0.88)] hover:border-white/30 transition-all duration-200 overflow-hidden relative rounded-none`}>
                 {/* Full Card Click Trigger */}
                 <DialogTrigger className="absolute inset-0 z-10 w-full h-full cursor-pointer focus:outline-none" />
 
@@ -506,7 +506,7 @@ END:VCALENDAR`;
                     </DropdownMenu>
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                            <Button variant="outline" className="gap-2 border-2 border-zinc-800 text-zinc-300 hover:bg-zinc-900 hover:text-white rounded-none shadow-[4px_4px_0px_0px_#27272a] hover:shadow-[2px_2px_0px_0px_#27272a] hover:translate-x-[2px] hover:translate-y-[2px] transition-all h-10 md:h-11 px-4 md:px-6">
+                            <Button variant="outline" className="gap-2 h-10 md:h-11 px-4 md:px-6">
                                 <Sparkles className="h-4 w-4" />
                                 Ask AI
                                 <ChevronDown className="h-3 w-3 opacity-50" />
@@ -559,7 +559,7 @@ END:VCALENDAR`;
                     </DropdownMenu>
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                            <Button variant="outline" className="gap-2 border-2 border-zinc-800 text-zinc-300 hover:bg-zinc-900 hover:text-white rounded-none shadow-[4px_4px_0px_0px_#27272a] hover:shadow-[2px_2px_0px_0px_#27272a] hover:translate-x-[2px] hover:translate-y-[2px] transition-all h-10 md:h-11 px-4 md:px-6">
+                            <Button variant="outline" className="gap-2 h-10 md:h-11 px-4 md:px-6">
                                 <CalendarPlus className="h-4 w-4" />
                                 Add to Calendar
                                 <ChevronDown className="h-3 w-3 opacity-50" />

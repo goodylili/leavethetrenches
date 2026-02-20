@@ -277,7 +277,7 @@ export default function PostOpportunityPage() {
                     <DropdownMenuTrigger asChild>
                       <button
                         type="button"
-                        className="inline-flex items-center justify-center gap-1.5 rounded-none border border-zinc-800 bg-zinc-950 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-300 shadow-[3px_3px_0px_0px_#27272a] hover:translate-x-[1px] hover:translate-y-[1px] hover:shadow-[2px_2px_0px_0px_#27272a] transition-all"
+                        className="inline-flex items-center justify-center gap-1.5 rounded-none border border-white/22 bg-white/8 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] text-zinc-50 backdrop-blur-md bg-clip-padding shadow-[0_18px_45px_rgba(15,23,42,0.85)] hover:border-white/40 transition-all"
                       >
                         <Bell className="h-3 w-3" />
                         Contribution info
@@ -285,10 +285,10 @@ export default function PostOpportunityPage() {
                     </DropdownMenuTrigger>
                     <DropdownMenuContent
                       align="end"
-                      className="w-[340px] md:w-[420px] bg-zinc-950 border-zinc-800 rounded-none shadow-[6px_6px_0px_0px_#27272a] p-3 space-y-3"
+                      className="w-[340px] md:w-[420px] border border-white/20 bg-slate-900/80 rounded-none shadow-[0_26px_70px_rgba(15,23,42,0.95)] p-3 space-y-3 backdrop-blur-2xl bg-clip-padding"
                     >
                       <div className="grid gap-3 md:grid-cols-2">
-                        <div className="border border-zinc-800 bg-zinc-950 p-3">
+                        <div className="border border-white/15 bg-white/5/80 p-3 backdrop-blur-sm bg-clip-padding">
                           <p className="text-[11px] font-semibold text-zinc-400 mb-1 uppercase tracking-[0.18em]">
                             What we collect
                           </p>
@@ -302,7 +302,7 @@ export default function PostOpportunityPage() {
                             </li>
                           </ul>
                         </div>
-                        <div className="border border-zinc-800 bg-zinc-950 p-3">
+                        <div className="border border-white/15 bg-white/5/80 p-3 backdrop-blur-sm bg-clip-padding">
                           <p className="text-[11px] font-semibold text-zinc-400 mb-1 uppercase tracking-[0.18em]">
                             Review process
                           </p>
@@ -347,8 +347,8 @@ export default function PostOpportunityPage() {
                       Cover image
                     </p>
                     <div className="space-y-2">
-                      <div className="flex items-center gap-3 rounded-none border border-dashed border-zinc-700 bg-zinc-950/40 px-3 py-3">
-                        <div className="flex h-12 w-12 items-center justify-center rounded-none border border-zinc-800 bg-zinc-950">
+                      <div className="flex items-center gap-3 rounded-none border border-dashed border-white/25 bg-white/5 px-3 py-3 backdrop-blur-sm bg-clip-padding">
+                        <div className="flex h-12 w-12 items-center justify-center rounded-none border border-white/25 bg-white/10">
                           <Upload className="h-5 w-5 text-zinc-400" />
                         </div>
                         <div className="flex flex-col">
@@ -686,7 +686,7 @@ export default function PostOpportunityPage() {
                       </label>
                       <textarea
                         placeholder="Short bullet-style summary of who is eligible, focusing on African applicants."
-                        className="min-h-[80px] w-full rounded-none border-2 border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 shadow-[4px_4px_0px_0px_#27272a] focus:shadow-none transition-all"
+                        className="min-h-[80px] w-full rounded-none border border-white/20 bg-white/5 px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 backdrop-blur-sm bg-clip-padding transition-all"
                         value={form.eligibility_summary}
                         onChange={handleChange("eligibility_summary")}
                         required
@@ -704,7 +704,7 @@ export default function PostOpportunityPage() {
                       </label>
                       <textarea
                         placeholder="Stipend, tuition coverage, relocation support, mentorship, visa benefits, etc."
-                        className="min-h-[80px] w-full rounded-none border-2 border-input bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 shadow-[4px_4px_0px_0px_#27272a] focus:shadow-none transition-all"
+                        className="min-h-[80px] w-full rounded-none border border-white/20 bg-white/5 px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 backdrop-blur-sm bg-clip-padding transition-all"
                         value={form.benefits_summary}
                         onChange={handleChange("benefits_summary")}
                         required
@@ -820,14 +820,14 @@ export default function PostOpportunityPage() {
                     <div className="flex gap-2 w-full sm:w-auto">
                       <Button
                         type="submit"
-                        className="flex-1 sm:flex-none h-10 rounded-none bg-primary text-primary-foreground hover:bg-primary/90 shadow-[4px_4px_0px_0px_#27272a] hover:shadow-[2px_2px_0px_0px_#27272a] hover:translate-x-[2px] hover:translate-y-[2px] transition-all text-sm font-semibold"
+                        className="flex-1 sm:flex-none h-10 rounded-none text-sm font-semibold"
                       >
                         Contribute for review
                       </Button>
                       <Button
                         type="button"
                         variant="outline"
-                        className="flex-1 sm:flex-none h-10 rounded-none border-zinc-700 text-zinc-300 hover:bg-zinc-900"
+                        className="flex-1 sm:flex-none h-10 rounded-none text-zinc-200"
                         onClick={handleReset}
                       >
                         Reset

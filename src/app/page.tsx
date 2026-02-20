@@ -940,7 +940,7 @@ export default function Home() {
             </p>
 
             {/* Search Box Container */}
-            <div className="border border-white/18 bg-white/10/80 backdrop-blur-2xl bg-clip-padding shadow-[0_30px_80px_rgba(15,23,42,0.95)] p-2 rounded-none flex flex-col md:flex-row gap-2 w-full mx-auto animate-in fade-in zoom-in duration-700 slide-in-from-bottom-4 delay-200 transition-all">
+            <div className="border border-white/18 bg-white/10 backdrop-blur-2xl bg-clip-padding shadow-[0_30px_80px_rgba(15,23,42,0.95)] p-2 rounded-none flex flex-col md:flex-row gap-2 w-full mx-auto animate-in fade-in zoom-in duration-700 slide-in-from-bottom-4 delay-200 transition-all">
               <div className="relative flex-1 group">
                 <SearchIcon className="absolute left-4 top-3.5 h-5 w-5 text-zinc-500 group-focus-within:text-zinc-200 transition-colors" />
                 <Input

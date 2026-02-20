@@ -94,7 +94,7 @@ export function OnboardingModal({ onComplete, open: controlledOpen, onOpenChange
             if (setIsOpen) setIsOpen(open);
         }}>
             {trigger && trigger}
-            <DialogContent className="sm:max-w-md border border-white/18 bg-white/10/85 text-white shadow-[0_30px_80px_rgba(15,23,42,0.95)] rounded-none backdrop-blur-2xl bg-clip-padding">
+            <DialogContent className="sm:max-w-md border border-white/18 bg-white/10 text-white shadow-[0_30px_80px_rgba(15,23,42,0.95)] rounded-none backdrop-blur-2xl bg-clip-padding">
                 <DialogHeader>
                     {step === 1 ? (
                         <div className="flex flex-col items-center text-center space-y-4 pt-4">
@@ -124,7 +124,7 @@ export function OnboardingModal({ onComplete, open: controlledOpen, onOpenChange
                         <div className="space-y-4">
                             <Input
                                 placeholder="Enter your email"
-                                className="h-12 text-base text-center border-white/25 bg-white/10/80 focus-visible:ring-primary focus-visible:border-primary"
+                                className="h-12 text-base text-center border-white/25 bg-white/10 focus-visible:ring-primary focus-visible:border-primary"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
