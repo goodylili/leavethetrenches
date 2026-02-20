@@ -5,7 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRef, useCallback, useState } from "react";
 import { toPng } from "html-to-image";
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from "react-markdown";
 import {
     Dialog,
     DialogContent,
@@ -60,6 +60,18 @@ const getCountryFlag = (country: string) => {
     };
     return map[country] || "";
 };
+
+const ChatGPTLogoMark = () => (
+    <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-zinc-700 bg-[#10a37f] text-[9px] font-semibold text-zinc-950">
+        G
+    </span>
+);
+
+const ClaudeLogoMark = () => (
+    <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-zinc-700 bg-amber-400 text-[9px] font-semibold text-zinc-950">
+        C
+    </span>
+);
 
 export function OpportunityCard({ opportunity, userCountry, compact = false }: { opportunity: Opportunity; userCountry?: string; compact?: boolean }) {
     const flag = getCountryFlag(opportunity.country);
@@ -479,9 +491,7 @@ END:VCALENDAR`;
                                 className="cursor-pointer hover:bg-zinc-900 rounded-none"
                             >
                                 <div className="flex items-center gap-2">
-                                    <span className="inline-flex h-5 w-7 items-center justify-center rounded-none border border-zinc-700 bg-zinc-900 text-[9px] font-semibold tracking-[0.14em]">
-                                        GPT
-                                    </span>
+                                    <ChatGPTLogoMark />
                                     <span>Open in ChatGPT</span>
                                 </div>
                             </DropdownMenuItem>
@@ -498,9 +508,7 @@ END:VCALENDAR`;
                                 className="cursor-pointer hover:bg-zinc-900 rounded-none"
                             >
                                 <div className="flex items-center gap-2">
-                                    <span className="inline-flex h-5 w-7 items-center justify-center rounded-none border border-zinc-700 bg-zinc-900 text-[9px] font-semibold tracking-[0.14em]">
-                                        CL
-                                    </span>
+                                    <ClaudeLogoMark />
                                     <span>Open in Claude</span>
                                 </div>
                             </DropdownMenuItem>
