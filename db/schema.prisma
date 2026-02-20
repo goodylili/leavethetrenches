@@ -1,0 +1,109 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model BountyOpportunity {
+  id        Int      @id @default(autoincrement())
+  sourceId  Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  data      Json
+
+  @@map("bounties")
+}
+
+model CompetitionOpportunity {
+  id        Int      @id @default(autoincrement())
+  sourceId  Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  data      Json
+
+  @@map("competitions")
+}
+
+model EventOpportunity {
+  id        Int      @id @default(autoincrement())
+  sourceId  Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  data      Json
+
+  @@map("events")
+}
+
+model ExternalEducationOpportunity {
+  id        Int      @id @default(autoincrement())
+  sourceId  Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  data      Json
+
+  @@map("external_education")
+}
+
+model FellowshipOpportunity {
+  id        Int      @id @default(autoincrement())
+  sourceId  Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  data      Json
+
+  @@map("fellowships")
+}
+
+model GrantOpportunity {
+  id        Int      @id @default(autoincrement())
+  sourceId  Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  data      Json
+
+  @@map("grants")
+}
+
+model ImmigrationOpportunity {
+  id        Int      @id @default(autoincrement())
+  sourceId  Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  data      Json
+
+  @@map("immigration")
+}
+
+model JobOpportunity {
+  id        Int      @id @default(autoincrement())
+  sourceId  Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  data      Json
+
+  @@map("jobs")
+}
+
+model ResearchOpportunity {
+  id        Int      @id @default(autoincrement())
+  sourceId  Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  data      Json
+
+  @@map("research")
+}
+
+model ScholarshipOpportunity {
+  id        Int      @id @default(autoincrement())
+  sourceId  Int
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  data      Json
+
+  @@map("scholarships")
+}
+

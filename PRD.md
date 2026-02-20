@@ -1,4 +1,4 @@
-# PRD.md
+# PRD.mdc 
 
 ## Product Name: **Leave the Trenches** (Working Title)
 
@@ -197,6 +197,7 @@ All listings must link to official source.
 * Transparency on monetization
 
 ---
+
 
 # 11. Monetization
 

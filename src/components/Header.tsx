@@ -105,11 +105,17 @@ export function Header() {
                                     </NavigationMenuItem>
 
                                     <NavigationMenuItem>
-                                        <Link href="/community" legacyBehavior passHref>
-                                            <NavigationMenuLink className={cn(navigationMenuTriggerStyle(), "bg-transparent text-zinc-300 hover:text-primary font-medium")}>
+                                        <NavigationMenuLink asChild>
+                                            <Link
+                                                href="/community"
+                                                className={cn(
+                                                    navigationMenuTriggerStyle(),
+                                                    "bg-transparent text-zinc-300 hover:text-primary font-medium"
+                                                )}
+                                            >
                                                 Community
-                                            </NavigationMenuLink>
-                                        </Link>
+                                            </Link>
+                                        </NavigationMenuLink>
                                     </NavigationMenuItem>
                                 </NavigationMenuList>
                             </NavigationMenu>
@@ -118,7 +124,7 @@ export function Header() {
 
                     <div className="flex items-center gap-3">
                         <Link href="/post" className="hidden sm:block">
-                            <span className="text-sm font-medium text-zinc-400 hover:text-primary transition-colors">Post Opportunities</span>
+                            <span className="text-sm font-medium text-zinc-400 hover:text-primary transition-colors">Add Opportunity</span>
                         </Link>
                         <GetAlertsButton />
                     </div>

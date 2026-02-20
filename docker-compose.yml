@@ -1,0 +1,32 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: opportunities
+      POSTGRES_USER: pathway
+      POSTGRES_PASSWORD: pathway
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - pgdata:/var/lib/postgresql/data
+
+  app:
+    image: node:22
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    command: sh -c "npm install && npm run dev"
+    ports:
+      - "3000:3000"
+    environment:
+      DATABASE_URL: postgres://pathway:pathway@db:5432/opportunities
+    depends_on:
+      - db
+
+volumes:
+  pgdata:
+

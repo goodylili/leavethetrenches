@@ -1,0 +1,80 @@
+CREATE TABLE IF NOT EXISTS bounties (
+  id SERIAL PRIMARY KEY,
+  source_id INT NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  data JSONB NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS competitions (
+  id SERIAL PRIMARY KEY,
+  source_id INT NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  data JSONB NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS events (
+  id SERIAL PRIMARY KEY,
+  source_id INT NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  data JSONB NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS external_education (
+  id SERIAL PRIMARY KEY,
+  source_id INT NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  data JSONB NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS fellowships (
+  id SERIAL PRIMARY KEY,
+  source_id INT NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  data JSONB NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS grants (
+  id SERIAL PRIMARY KEY,
+  source_id INT NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  data JSONB NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS immigration (
+  id SERIAL PRIMARY KEY,
+  source_id INT NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  data JSONB NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS jobs (
+  id SERIAL PRIMARY KEY,
+  source_id INT NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  data JSONB NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS research (
+  id SERIAL PRIMARY KEY,
+  source_id INT NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  data JSONB NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS scholarships (
+  id SERIAL PRIMARY KEY,
+  source_id INT NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  data JSONB NOT NULL
+);
+
